@@ -1,0 +1,78 @@
+#outlet\cart\cart Related APIs
+extend type Query @guard(with: ["pos_user"]) {
+    getCart(
+        id: ID! @eq
+    ): Cart @find(model: "Webkul\\Checkout\\Models\\Cart")
+}
+
+extend type Mutation @guard(with: ["pos_user"]) {
+    createCart (
+        customerId: ID! @rename(attribute: "customer_id")
+    ): CartItemResponse @field(resolver: "Webkul\\Pos\\Mutations\\Outlet\\CartMutation@store")
+
+    storeCartItem(
+        input: createCartInput! @spread
+    ): CartItemResponse @field(resolver: "Webkul\\Pos\\Mutations\\Outlet\\CartMutation@storeItem")
+
+    updateCartItem(
+        input: updateCartItemInput! @spread
+    ): CartItemResponse @field(resolver: "Webkul\\Pos\\Mutations\\Outlet\\CartMutation@updateItem")
+
+    deleteCartItem(
+        input: deleteCartItemInput! @spread
+    ): CartItemResponse @field(resolver: "Webkul\\Pos\\Mutations\\Outlet\\CartMutation@deleteItem")
+
+    applyCartCoupon(
+        input: applyCouponInput! @spread
+    ): CartItemResponse @field(resolver: "Webkul\\Pos\\Mutations\\Outlet\\CartMutation@applyCoupon")
+
+    removeCartCoupon(
+        cartId: ID! @rules(apply: ["required"]) @rename(attribute: "cart_id")
+    ): CartItemResponse @field(resolver: "Webkul\\Pos\\Mutations\\Outlet\\CartMutation@removeCoupon")
+}
+
+input createCartInput {
+    cartId: Int! @rename(attribute: "cart_id")
+    productId: Int! @rename(attribute: "product_id")
+    quantity: Int!
+
+    # Used in case of adding Grouped Product to Cart
+    selectedConfigurableOption: Int @rename(attribute: "selected_configurable_option")
+    superAttribute: [ConfigurableProductInput!] @rename(attribute: "super_attribute")
+
+    # Used in case of adding Grouped Product to Cart
+    qty: [GroupedProductInput!]
+
+    # Used in case of adding Downloadable Product to Cart
+    links: [Int!]
+
+    # Used in case of adding Bundled Product to Cart
+    bundleOptionQuantity: [Int] @rename(attribute: "bundle_option_qty")
+    bundleOptions: [BundledOptionsInput!] @rename(attribute: "bundle_options")
+    additional: additionalInput
+}
+
+input additionalInput {
+    note: String
+}
+
+input updateCartItemInput {
+    qty: [UpdateCartItemsQty!]
+    cartId: Int @rename(attribute: "cart_id")
+}
+
+input UpdateCartItemsQty {
+    cartItemId: ID! @rename(attribute: "cart_item_id") @rules(apply: ["required"])
+    customPrice: Float @rename(attribute: "custom_price")
+    quantity: Int! @rules(apply: ["min:1","required"])
+}
+
+input deleteCartItemInput {
+    cartItemId: ID! @rename(attribute: "cart_item_id") @rules(apply: ["required"])
+    cartId: Int @rename(attribute: "cart_id")
+}
+
+input applyCouponInput {
+    code: String @rules(apply: ["required"])
+    cartId: Int @rename(attribute: "cart_id")
+}

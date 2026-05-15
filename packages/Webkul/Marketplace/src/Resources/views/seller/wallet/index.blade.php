@@ -1,0 +1,147 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<x-marketplace::seller.layouts>
+    <!-- Page Title -->
+    <x-slot:title>
+        @lang('marketplace::app.seller.wallet.title')
+        </x-slot>
+
+        <div class="flex justify-start max-lg:hidden">
+            <div class="flex items-center gap-x-3.5">
+                <div class="mb-2.5 flex justify-start max-lg:hidden">
+                    <div class="flex items-center gap-x-3.5">
+                        <nav aria-label="">
+                            <ol class="flex">
+                                <li class="flex items-center gap-x-2.5 text-base font-medium"><a>
+                                        @lang('marketplace::app.seller.menu.profile') </a><span
+                                        class="mr-2.5 text-base text-[#727272] after:content-['/']"></span></li>
+                                <li class="mr-2.5 flex items-center gap-x-2.5 text-base font-medium text-[#727272] after:content-['/'] after:last:hidden"
+                                    aria-current="page"> @lang('marketplace::app.seller.wallet.title') </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-between mb-4">
+            <div>
+                <h2 class="text-2xl font-medium">
+                    @lang('marketplace::app.seller.wallet.title')
+                </h2>
+            </div>
+            <h2>@lang('marketplace::app.seller.wallet.balance'): {{ core()->currency($balance) }}</h2>
+            <a href="{{ route('seller.wallet.create') }}"
+                class="btn primary-button">@lang('marketplace::app.seller.wallet.add-balance')</a>
+
+        </div>
+
+        {!! view_render_event('bagisto.seller.wallet.list.before') !!}
+
+        <!-- Datagrid -->
+        <x-shop::datagrid :src="route('seller.wallet.index')" :isMultiRow="true">
+            <!-- Datagrid Header -->
+            <template #header="{
+            isLoading,
+            available,
+            applied,
+            selectAll,
+            performAction
+        }">
+                <template v-if="! isLoading">
+                    <div
+                        class="row grid grid-cols-[0.5fr_0.6fr_0.5fr_0.5fr_0.3fr_0.1fr] grid-rows-1 items-center border-b px-4 py-2.5">
+                        <div class="flex select-none items-center gap-2.5"
+                            v-for="(columnGroup, index) in [ ['vendor_id'], ['amount'], ['order_id'], ['transaction_id'],['status'],[ 'created_at']]">
+                            <p class="text-sm font-medium text-[#000000]">
+                                <span class="[&>*]:after:content-['_/_']">
+                                    <template v-for="column in columnGroup">
+                                        <span class="after:content-['/'] last:after:content-['']" :class="{
+                                            'text-sm font-medium text-[#000000]': applied.sort.column == column,
+                                            'cursor-pointer hover:text-gray-800': available.columns.find(columnTemp => columnTemp.index === column)?.sortable,
+                                        }" @click="
+                                            available.columns.find(columnTemp => columnTemp.index === column)?.sortable ? sort(available.columns.find(columnTemp => columnTemp.index === column)): {}
+                                        ">
+                                            @{{ available.columns.find(columnTemp => columnTemp.index === column)?.label
+                                            }}
+                                        </span>
+                                    </template>
+                                </span>
+
+                                <i class="align-text-bottom text-base text-gray-800 ltr:ml-1 rtl:mr-1"
+                                    :class="[applied.sort.order === 'asc' ? 'icon-arrow-down': 'icon-arrow-up']"
+                                    v-if="columnGroup.includes(applied.sort.column)"></i>
+                            </p>
+                        </div>
+                    </div>
+                </template>
+
+                <!-- Datagrid Head Shimmer -->
+                <template v-else>
+                    <x-shop::shimmer.datagrid.table.head :isMultiRow="true" />
+                </template>
+            </template>
+
+            <!-- Datagrid Body -->
+            <template #body="{
+            isLoading,
+            available,
+            applied,
+            performAction
+        }">
+                <template v-if="! isLoading">
+                    <div class="row grid grid-cols-[0.5fr_0.6fr_0.5fr_0.5fr_0.3fr_0.1fr] grid-rows-1 items-center border-b px-4 py-2.5"
+                        v-for="record in available.records">
+                        <!-- Order Id, Created, Status Section -->
+
+                        <div class="grid gap-y-1.5">
+                            <p class="text-sm" v-html="record.vendor_id">
+                            </p>
+                        </div>
+                        <div class="grid gap-y-1.5">
+                            <p class="text-sm font-semibold" v-text="record.amount">
+                            </p>
+                        </div>
+                        <div class="grid gap-y-1.5">
+                            <p class="text-sm" v-text="record.order_id">
+                            </p>
+                        </div>
+                        <div class="grid gap-y-1.5">
+                            <p class="text-sm" v-text="record.transaction_id">
+                            </p>
+                        </div>
+
+                        <div class="grid gap-y-1.5">
+                            <p class="text-sm" v-html="record.status"></p>
+                        </div>
+
+                        <!-- Items, Payment, Shipping -->
+                        <div class="grid gap-y-1.5">
+                            <p class="text-sm font-semibold" v-text="record.created_at">
+                            </p>
+                        </div>
+
+
+
+                        <!-- Actions -->
+                        {{-- <div v-if="record.actions.length" class="flex items-center">
+                            <p class="text-sm font-semibold" v-text="Delete"></p>
+                            <a @click="performAction(record.actions.find(action => action.method === 'POST'))">
+                                <span :class="record.actions.find(action => action.method === 'POST')?.icon"
+                                    class="cursor-pointer rounded-md p-1.5 text-2xl transition-all hover:bg-gray-200 dark:hover:bg-gray-800 max-sm:place-self-center"
+                                    :title="record.actions.find(action => action.method === 'POST')?.title">
+                                </span>
+                            </a>
+                        </div> --}}
+                    </div>
+                </template>
+
+                <!-- Datagrid Body Shimmer -->
+                <template v-else>
+                    <x-shop::shimmer.datagrid.table.body :isMultiRow="true" />
+                </template>
+            </template>
+        </x-shop::datagrid>
+
+        {!! view_render_event('bagisto.seller.wallet.list.after') !!}
+</x-marketplace::seller.layouts>

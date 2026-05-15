@@ -1,0 +1,11 @@
+#outlet\agent\customers Related APIs
+extend type Query {
+    getCustomers(
+        first: Int,
+        page: Int
+    ): [Customer!] @guard(with: ["pos_user"]) @paginate(
+        type: "PAGINATOR",
+        defaultCount: 10,
+        model: "Webkul\\Customer\\Models\\Customer"
+    )
+}

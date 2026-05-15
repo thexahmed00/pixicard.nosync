@@ -1,0 +1,26 @@
+#outlet\customers\update Related APIs
+extend type Mutation {
+    updatePosCustomer(
+        input: updateCustomerInput! @spread
+    ): UpdateCustomerResult @guard(with: ["pos_user"]) @field(resolver: "Webkul\\Pos\\Mutations\\Outlet\\CustomerMutation@update")
+}
+
+input updateCustomerInput {
+    id: ID! @rules(apply: ["required"])
+    firstName: String @rename(attribute: "first_name")
+    lastName: String @rename(attribute: "last_name")
+    phone: String
+    email: String!
+    address: [String]
+    city: String
+    country: String
+    state: String
+    postcode: String
+}
+
+type UpdateCustomerResult {
+    success: Boolean
+    errors: String
+    message: String
+    customer: Customer
+}

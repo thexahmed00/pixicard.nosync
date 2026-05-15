@@ -1,0 +1,420 @@
+{
+    "pos": {
+        "title": "پوز Bagisto",
+        "page_not_found": {
+            "title": "چیزی کم است.",
+            "message": "متاسفیم، نمی‌توانیم آن صفحه را پیدا کنیم. می‌توانید چیزهای زیادی را در صفحه اصلی کشف کنید.",
+            "back_btn_title": "بازگشت به صفحه اصلی"
+        },
+        "login_form": {
+            "title": "ورود",
+            "user_name": "نام کاربری",
+            "user_name_placeholder": "نام کاربری را وارد کنید",
+            "password": "رمز عبور",
+            "password_placeholder": "رمز عبور را وارد کنید",
+            "remember_password": "مرا به خاطر بسپار",
+            "login_btn_title": "ورود"
+        },
+        "footer": {
+            "warning": "وبکول اجازه نمی‌دهد هیچ فروشنده‌ی شخص ثالثی را برای بازفروشی ماژول‌های وبکول مجاز کند.",
+            "copyright": "© کپی رایت 2010-2023، نرم‌افزار وبکول (ثبت شده در هند/آمریکا). همه حقوق محفوظ است."
+        },
+        "layout": {
+            "header": {
+                "title": "پوز Bagisto",
+                "search_products": "جستجوی محصولات...",
+                "hold_orders": "سفارشات نگهداری شده",
+                "barcode_form": {
+                    "title": "وارد کردن بارکد",
+                    "barcode_placeholder": "بارکد محصول را وارد کنید",
+                    "cancel_btn_title": "لغو",
+                    "proceed_btn_title": "ادامه"
+                },
+                "product_create_form": {
+                    "title": "اضافه کردن محصول جدید",
+                    "name": "نام",
+                    "sku": "شناسه محصول",
+                    "price": "قیمت",
+                    "weight": "وزن",
+                    "quantity": "تعداد",
+                    "cancel_btn_title": "لغو",
+                    "proceed_btn_title": "ادامه"
+                }
+            },
+            "sidebar": {
+                "home": "خانه",
+                "customers": "مشتریان",
+                "cashier": "صندوقدار",
+                "orders": "سفارشات",
+                "products": "محصولات",
+                "reports": "گزارش‌ها",
+                "settings": "تنظیمات",
+                "logout": "خروج"
+            },
+            "main": {
+                "progress_modal": {
+                    "title": "همگام‌سازی داده‌ها",
+                    "description": "لطفاً صبر کنید تا داده‌ها همگام‌سازی شوند. این ممکن است مدتی طول بکشد.",
+                    "products": "محصولات",
+                    "categories": "دسته‌بندی‌ها",
+                    "customers": "مشتریان",
+                    "orders": "سفارشات"
+                },
+                "cash_drawer": {
+                    "title": "کشوی پول",
+                    "opening_drawer_amount": "مقدار باز کردن کشو",
+                    "remarks": "یادداشت‌ها",
+                    "remarks_placeholder": "یادداشت‌های بستن کانتر را وارد کنید.",
+                    "open_drawer": "باز کردن کشو"
+                }
+            }
+        },
+        "common": {
+            "cart": {
+                "add_customer": "افزودن مشتری",
+                "add": "افزودن",
+                "quantity": "تعداد",
+                "discount": "تخفیف",
+                "coupon_code": "کد تخفیف",
+                "note": "یادداشت",
+                "subtotal": "جمع جزئی",
+                "tax": "مالیات",
+                "payable_amount": "مبلغ قابل پرداخت",
+                "hold_order": "نگهداری سفارش",
+                "hold_order_success": "سفارش با موفقیت نگه‌داری شد.",
+                "create_success": "سبد خرید با موفقیت ایجاد شد.",
+                "update_success": "سبد خرید با موفقیت به‌روز شد.",
+                "remove_success": "سبد خرید با موفقیت حذف شد.",
+                "product_add_success": "محصول با موفقیت به سبد خرید اضافه شد!",
+                "product_remove_success": "محصول با موفقیت از سبد خرید حذف شد!",
+                "no_cart_selected": "هیچ سبدی انتخاب نشده است.",
+                "no_customer_selected": "هیچ مشتری انتخاب نشده است.",
+                "customer_exists": "سبد خرید برای مشتری انتخاب شده قبلاً وجود دارد.",
+                "proceed": "ادامه",
+                "coupon_form": {
+                    "title": "کد تخفیف",
+                    "cancel_btn_title": "لغو",
+                    "proceed_btn_title": "ادامه"
+                },
+                "order_note_form": {
+                    "title": "یادداشت سفارش",
+                    "note_placeholder": "یادداشت سفارش را وارد کنید",
+                    "cancel_btn_title": "لغو",
+                    "proceed_btn_title": "ادامه",
+                    "create_success": "یادداشت سفارش با موفقیت اضافه شد.",
+                    "remove_success": "یادداشت سفارش با موفقیت حذف شد."
+                }
+            },
+            "flash_messages": {
+                "close": "بستن",
+                "error_message": "مشکلی پیش آمد! لطفاً دوباره تلاش کنید.",
+                "offline_error": "هشدار، شما در حالت آفلاین هستید"
+            },
+            "confirm_modal": {
+                "title": "آیا مطمئن هستید؟",
+                "description": "آیا مطمئن هستید که می‌خواهید این اقدام را انجام دهید؟",
+                "disagree_btn_title": "مخالفت",
+                "agree_btn_title": "موافقت"
+            }
+        },
+        "home": {
+            "title": "خانه",
+            "print_confirmation_title": "تأیید چاپ؟",
+            "print_confirm_message": "آیا می‌خواهید رسید آخرین سفارش را چاپ کنید؟",
+            "items_in_cart": "{count} مورد در سبد خرید.",  
+            "view_cart_btn": "مشاهده سبد خرید",
+            "categories": {
+                "all": "همه"
+            },
+            "product": {
+                "view": {
+                    "qty": "{qty} تعداد",
+                    "add_to_cart": "افزودن به سبد خرید",
+                    "type": {
+                        "bundle": {
+                            "total_amount": "مجموع مبلغ",
+                            "none": "هیچ گزینه بسته‌ای در دسترس نیست"
+                        },
+                        "configurable": {
+                            "select_option": "انتخاب گزینه‌ها",
+                            "select_above_option": "لطفاً ابتدا گزینه‌های بالا را انتخاب کنید.",
+                            "price": "قیمت گزینه انتخابی"
+                        },
+                        "downloadable": {
+                            "samples": "نمونه‌ها",
+                            "links": "لینک‌ها"
+                        },
+                        "grouped": {
+                            "name": "نام"
+                        }
+                    }
+                }
+            }
+        },
+        "customers": {
+            "title": "مشتریان",
+            "add_btn_title": "افزودن مشتری جدید",
+            "edit_btn_title": "ویرایش",
+            "delete_btn_title": "حذف",
+            "remove_btn_title": "برداشتن",
+            "search_customers": "جستجوی مشتریان...",
+            "no_customers_found": "هیچ مشتری‌ای یافت نشد.",
+            "no_current_customer": "هیچ مشتری فعلی انتخاب نشده است.",
+            "current_customer_removed": "مشتری با موفقیت حذف شد.",
+            "current_customer_updated": "مشتری فعلی با موفقیت به‌روزرسانی شد.",
+            "customers": "مشتریان",
+            "offline_customers": "مشتریان آفلاین",
+            "create": {
+                "title": "افزودن مشتری جدید",
+                "back_btn_title": "بازگشت",
+                "first_name": "نام",
+                "last_name": "نام خانوادگی",
+                "email": "ایمیل",
+                "phone_number": "شماره تلفن",
+                "address": "آدرس",
+                "city": "شهر",
+                "state": "استان",
+                "select_state": "انتخاب استان",
+                "country": "کشور",
+                "select_country": "انتخاب کشور",
+                "pin_code": "کد پستی",
+                "save_btn_title": "افزودن مشتری",
+                "phone_already_exist": "این شماره تلفن قبلاً ثبت شده است.",
+                "email_already_exist": "این ایمیل قبلاً ثبت شده است.",
+                "create_success": "مشتری با موفقیت ایجاد شد."
+            },
+            "edit": {
+                "title": "ویرایش مشتری",
+                "back_btn_title": "بازگشت",
+                "first_name": "نام",
+                "last_name": "نام خانوادگی",
+                "email": "ایمیل",
+                "phone_number": "شماره تلفن",
+                "address": "آدرس",
+                "city": "شهر",
+                "state": "استان",
+                "select_state": "انتخاب استان",
+                "country": "کشور",
+                "select_country": "انتخاب کشور",
+                "pin_code": "کد پستی",
+                "save_btn_title": "به‌روزرسانی مشتری",
+                "phone_already_exist": "این شماره تلفن قبلاً ثبت شده است.",
+                "email_already_exist": "این ایمیل قبلاً ثبت شده است.",
+                "update_success": "مشتری با موفقیت به‌روزرسانی شد."
+            }
+        },
+        "cashier": {
+            "title": "صندوق‌دار",
+            "cash_drawer": {
+                "title": "کشوی نقدی",
+                "drawer_amount_summary": "خلاصه مبلغ کشو",
+                "opening_drawer_amount": "مبلغ افتتاحیه کشو",
+                "cash_payment_sale": "فروش پرداخت نقدی",
+                "other_payment_sale": "فروش پرداخت دیگر",
+                "expected_drawer_amount": "مبلغ انتظاری کشو",
+                "difference": "تفاوت",
+                "remarks": "توضیحات",
+                "remarks_placeholder": "توضیحات بستن میز کانتر را وارد کنید.",
+                "close_drawer": "بستن کشو"
+            },
+            "today_sale": {
+                "title": "فروش امروز",
+                "opening_drawer_amount": "مبلغ افتتاحیه کشو",
+                "cash_payment_sale": "فروش پرداخت نقدی",
+                "other_payment_sale": "فروش پرداخت دیگر",
+                "sale_history": "تاریخچه فروش",
+                "filters": "فیلترها",
+                "order_id": "شماره سفارش",
+                "time": "زمان",
+                "order_total": "مجموع سفارش",
+                "payment_mode": "نحوه پرداخت",
+                "no_records": "سجلی پیدا نشد.",
+                "drawer": {
+                    "title": "فیلتر",
+                    "order_id": "شناسه سفارش",
+                    "time": "زمان",
+                    "order_total": "مجموع سفارش",
+                    "payment_mode": "روش پرداخت",
+                    "select_payment_mode": "انتخاب روش پرداخت",
+                    "pos_cash": "پرداخت نقدی",
+                    "pos_card": "پرداخت با کارت",
+                    "pos_split": "پرداخت تقسیم شده",
+                    "filter_btn_title": "اعمال فیلتر"
+                }
+            },
+            "sale_history": {
+                "title": "تاریخچه فروش",
+                "filters": "فیلترها",
+                "date": "تاریخ",
+                "cash_payments": "پرداخت‌های نقدی",
+                "other_payments": "پرداخت‌های دیگر",
+                "total_sale": "مجموع فروش",
+                "drawer_note": "یادداشت کشو",
+                "no_records": "سجلی پیدا نشد.",
+                "drawer": {
+                    "title": "فیلتر",
+                    "date": "تاریخ",
+                    "cash_payment": "پرداخت نقدی",
+                    "other_payment": "پرداخت دیگر",
+                    "total_sale": "کل فروش",
+                    "filter_btn_title": "اعمال فیلتر"
+                }
+            }
+        },
+        "orders": {
+            "title": "سفارشات",
+            "history": {
+                "title": "تاریخچه",
+                "search_orders": "جستجوی شماره سفارش یا نام مشتری...",
+                "filters": "فیلترها",
+                "order_id": "شماره سفارش",
+                "date": "تاریخ",
+                "total_sales": "مجموع فروش",
+                "subtotal": "جمع جزئی",
+                "tax": "مالیات",
+                "no_records": "سجلی پیدا نشد."
+            },
+            "hold": {
+                "title": "سفارشات در انتظار",
+                "note": "یادداشت",
+                "resume": "ادامه",
+                "remove": "حذف",
+                "remove_success": "سفارش با موفقیت حذف شد.",
+                "resume_success": "سفارش با موفقیت از سر گرفته شد.",
+                "no_orders": "هیچ سفارشی یافت نشد."
+            },
+            "offline": {
+                "title": "سفارشات آفلاین",
+                "sync_order": "همگام‌سازی سفارش",
+                "sync_all_orders": "همگام‌سازی تمام سفارش‌ها",
+                "search_order_id": "جستجوی شماره سفارش...",
+                "order_id": "شماره سفارش",
+                "date": "تاریخ",
+                "no_orders": "هیچ سفارشی آفلاین یافت نشد.",
+                "sync_success": "سفارش با موفقیت همگام‌سازی شد."
+            },
+            "info": {
+                "order_id": "شماره سفارش",
+                "subtotal": "جمع جزئی",
+                "tax": "مالیات",
+                "discount": "تخفیف",
+                "grand_total": "مجموع کل",
+                "cash": "نقدی",
+                "balance": "مانده",
+                "no_order_selected": "هیچ سفارشی برای پیش‌نمایش یا چاپ فاکتور انتخاب نشده است."
+            },
+            "print": {
+                "btn_title": "چاپ فاکتور",
+                "cashier": "صندوقدار",
+                "change": "باقی‌مانده",
+                "contact_info": "اطلاعات تماس",
+                "customer": "مشتری",
+                "customer_care": "خدمات مشتری",
+                "date": "تاریخ",
+                "discount": "تخفیف",
+                "email": "ایمیل",
+                "grand_total": "جمع کل",
+                "item": "محصول",
+                "name": "نام",
+                "order_id": "شناسه سفارش",
+                "phone": "تلفن",
+                "price": "قیمت",
+                "qty": "تعداد",
+                "subtotal": "جمع فرعی",
+                "tax": "مالیات",
+                "total": "جمع",
+                "total_qty": "مجموع تعداد",
+                "website": "وب‌سایت"
+            }              
+        },
+        "products": {
+            "title": "محصولات",
+            "low_stock_products": {
+                "title": "محصولات با موجودی کم",
+                "qty": "{qty} تعداد",
+                "purchase_request": "درخواست خرید",
+                "send_request_btn": "ارسال درخواست",
+                "no_purchase_request": "درخواستی برای خرید پیدا نشد.",
+                "no_products": "محصولات با موجودی کم پیدا نشد.",
+                "items_in_request": "{count} مورد در درخواست خرید.",
+                "view_btn_title": "مشاهده",
+                "request": {
+                    "title": "ارسال درخواست مقدار",
+                    "requested_quantity": "مقدار درخواست شده",
+                    "comment": "نظر",
+                    "comment_placeholder": "نظر خود را وارد کنید",
+                    "add_btn_title": "افزودن محصول",
+                    "cancel_btn_title": "لغو",
+                    "already_exist": "محصول قبلاً در لیست درخواست‌ها وجود دارد."
+                }
+            },
+            "requested_products": {
+                "title": "محصولات درخواست شده",
+                "search_products": "جستجوی محصولات...",
+                "qty": "تعداد:- {qty}",
+                "pending": "در انتظار",
+                "received": "دریافت شده",
+                "declined": "رد شده",
+                "no_products": "درخواستی برای محصول پیدا نشد."
+            },
+            "settings": {
+                "title": "تنظیمات",
+                "minimum_qty": "حداقل تعداد",
+                "save_btn_title": "ذخیره",
+                "save_success": "تنظیمات با موفقیت ذخیره شد."
+            }
+        },
+        "reports": {
+            "title": "گزارش‌ها",
+            "day": "روز",
+            "week": "هفته",
+            "month": "ماه"
+        },
+        "settings": {
+            "title": "تنظیمات",
+            "account": {
+                "title": "تنظیمات حساب",
+                "first_name": "نام",
+                "last_name": "نام خانوادگی",
+                "email": "ایمیل",
+                "old_password": "رمز عبور قدیمی",
+                "new_password": "رمز عبور جدید",
+                "confirm_password": "تأیید رمز عبور",
+                "update_btn_title": "به‌روزرسانی حساب"
+            },
+            "other": {
+                "title": "سایر",
+                "locale": "زبان",
+                "select_locale": "انتخاب زبان",
+                "currency": "واحد پول",
+                "select_currency": "انتخاب واحد پول",
+                "save_btn_title": "ذخیره"
+            },
+            "save_success": "تنظیمات با موفقیت ذخیره شد."
+        },
+        "payment": {
+            "title": "پرداخت",
+            "back": "بازگشت",
+            "order_details": "جزئیات سفارش",
+            "subtotal": "جمع جزئی",
+            "tax": "مالیات",
+            "discount": "تخفیف",
+            "grand_total": "مجموع کل",
+            "payable_amount": "مبلغ قابل پرداخت",
+            "received": "دریافتی",
+            "remaining": "مانده",
+            "pos_cash": "نقدی",
+            "pos_card": "کارت",
+            "pos_split": "تقسیم",
+            "cancel": "لغو",
+            "card_details": "جزئیات کارت",
+            "bank": "بانک",
+            "select_bank": "انتخاب بانک",
+            "other": "سایر",
+            "confirm_payment": "تأیید پرداخت",
+            "empty_cart": "سبد خرید خالی است!",
+            "amount_exceeded": "مبلغ پرداختی بیش از حد است!",
+            "order_placed": "سفارش با موفقیت ثبت شد."
+        }
+    }
+}

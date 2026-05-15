@@ -1,0 +1,43 @@
+#outlet\home\orders offline related APIs
+extend type Mutation {
+    syncOrder (
+        input: syncOrderInput! @spread
+    ): syncOrderResponse @guard(with: ["pos_user"]) @field(resolver: "Webkul\\Pos\\Mutations\\Outlet\\OrderMutation@syncOrder")
+}
+
+input syncOrderInput {
+    customerId: Int @rename(attribute: "customer_id")
+    paymentMode: String @rename(attribute: "payment_mode")
+    cashTotal: Float @rename(attribute: "cash_total")
+    cardTotal: Float @rename(attribute: "card_total")
+    bankName: String @rename(attribute: "bank_name")
+    cardDetails: String @rename(attribute: "card_details")
+    orderNote: String @rename(attribute: "order_note")
+    orderItems: [OrderItemInput] @rename(attribute: "order_items")
+}
+
+type syncOrderResponse {
+    success: Boolean
+    message: String
+    outletOrder: OutletOrder @rename(attribute: "outlet_order")
+}
+
+input OrderItemInput {
+    productId: Int! @rename(attribute: "product_id")
+    qtyOrdered: Int! @rename(attribute: "qty_ordered")
+
+    # Used in case of adding Grouped Product to Cart
+    selectedConfigurableOption: Int @rename(attribute: "selected_configurable_option")
+    superAttribute: [ConfigurableProductInput!] @rename(attribute: "super_attribute")
+
+    # Used in case of adding Grouped Product to Cart
+    qty: [GroupedProductInput!]
+
+    # Used in case of adding Downloadable Product to Cart
+    links: [Int!]
+
+    # Used in case of adding Bundled Product to Cart
+    bundleOptionQuantity: [Int] @rename(attribute: "bundle_option_qty")
+    bundleOptions: [BundledOptionsInput!] @rename(attribute: "bundle_options")
+    additional: additionalInput
+}

@@ -1,0 +1,420 @@
+{
+    "pos": {
+        "title": "Bagisto POS",
+        "page_not_found": {
+            "title": "Чего-то не хватает.",
+            "message": "Извините, мы не можем найти эту страницу. На главной странице есть много интересного.",
+            "back_btn_title": "Вернуться на главную"
+        },
+        "login_form": {
+            "title": "Вход",
+            "user_name": "Имя пользователя",
+            "user_name_placeholder": "Введите имя пользователя",
+            "password": "Пароль",
+            "password_placeholder": "Введите пароль",
+            "remember_password": "Запомнить пароль",
+            "login_btn_title": "Войти"
+        },
+        "footer": {
+            "warning": "Webkul не авторизует сторонних продавцов для перепродажи модулей Webkul.",
+            "copyright": "© Авторское право 2010-2023, Webkul Software (зарегистрировано в Индии/США). Все права защищены."
+        },
+        "layout": {
+            "header": {
+                "title": "Bagisto POS",
+                "search_products": "Поиск товаров...",
+                "hold_orders": "Заказы на удержание",
+                "barcode_form": {
+                    "title": "Введите штрих-код",
+                    "barcode_placeholder": "Введите штрих-код товара",
+                    "cancel_btn_title": "Отмена",
+                    "proceed_btn_title": "Продолжить"
+                },
+                "product_create_form": {
+                    "title": "Добавить новый продукт",
+                    "name": "Название",
+                    "sku": "SKU",
+                    "price": "Цена",
+                    "weight": "Вес",
+                    "quantity": "Количество",
+                    "cancel_btn_title": "Отмена",
+                    "proceed_btn_title": "Продолжить"
+                }
+            },
+            "sidebar": {
+                "home": "Главная",
+                "customers": "Клиенты",
+                "cashier": "Кассир",
+                "orders": "Заказы",
+                "products": "Товары",
+                "reports": "Отчеты",
+                "settings": "Настройки",
+                "logout": "Выйти"
+            },
+            "main": {
+                "progress_modal": {
+                    "title": "Синхронизация данных",
+                    "description": "Пожалуйста, подождите, пока мы синхронизируем данные. Это может занять некоторое время.",
+                    "products": "Продукты",
+                    "categories": "Категории",
+                    "customers": "Клиенты",
+                    "orders": "Заказы"
+                },
+                "cash_drawer": {
+                    "title": "Кассовый ящик",
+                    "opening_drawer_amount": "Сумма открытия ящика",
+                    "remarks": "Примечания",
+                    "remarks_placeholder": "Введите примечания к закрытию кассы.",
+                    "open_drawer": "Открыть ящик"
+                }
+            }
+        },
+        "common": {
+            "cart": {
+                "add_customer": "Добавить клиента",
+                "add": "Добавить",
+                "quantity": "Количество",
+                "discount": "Скидка",
+                "coupon_code": "Код купона",
+                "note": "Примечание",
+                "subtotal": "Промежуточный итог",
+                "tax": "Налог",
+                "payable_amount": "Сумма к оплате",
+                "hold_order": "Удержать заказ",
+                "hold_order_success": "Заказ был успешно приостановлен.",
+                "create_success": "Корзина успешно создана.",
+                "update_success": "Корзина успешно обновлена.",
+                "remove_success": "Корзина успешно удалена.",
+                "product_add_success": "Товар успешно добавлен в корзину!",
+                "product_remove_success": "Товар успешно удален из корзины!",
+                "no_cart_selected": "Корзина не выбрана.",
+                "no_customer_selected": "Клиент не выбран.",
+                "customer_exists": "Корзина уже существует для выбранного клиента.",
+                "proceed": "Продолжить",
+                "coupon_form": {
+                    "title": "Код купона",
+                    "cancel_btn_title": "Отмена",
+                    "proceed_btn_title": "Продолжить"
+                },
+                "order_note_form": {
+                    "title": "Примечание к заказу",
+                    "note_placeholder": "Введите примечание к заказу",
+                    "cancel_btn_title": "Отмена",
+                    "proceed_btn_title": "Продолжить",
+                    "create_success": "Заметка по заказу успешно добавлена.",
+                    "remove_success": "Заметка по заказу успешно удалена."
+                }
+            },
+            "flash_messages": {
+                "close": "Закрыть",
+                "error_message": "Что-то пошло не так! Пожалуйста, попробуйте снова.",
+                "offline_error": "Предупреждение, вы находитесь в офлайн-режиме"
+            },
+            "confirm_modal": {
+                "title": "Вы уверены?",
+                "description": "Вы уверены, что хотите выполнить это действие?",
+                "disagree_btn_title": "Не согласен",
+                "agree_btn_title": "Согласен"
+            }
+        },
+        "home": {
+            "title": "Главная",
+            "print_confirmation_title": "Подтверждение печати?",
+            "print_confirm_message": "Хотите распечатать квитанцию ​​последнего заказа?",
+            "items_in_cart": "{count} товаров в корзине.",  
+            "view_cart_btn": "Посмотреть корзину",
+            "categories": {
+                "all": "Все"
+            },
+            "product": {
+                "view": {
+                    "qty": "{qty} Количество",
+                    "add_to_cart": "Добавить в корзину",
+                    "type": {
+                        "bundle": {
+                            "total_amount": "Итоговая Сумма",
+                            "none": "Нет Доступных Опций Пакета"
+                        },
+                        "configurable": {
+                            "select_option": "Выберите Опции",
+                            "select_above_option": "Пожалуйста, сначала выберите указанные выше опции.",
+                            "price": "Цена Выбранного Варианта"
+                        },
+                        "downloadable": {
+                            "samples": "Образцы",
+                            "links": "Ссылки"
+                        },
+                        "grouped": {
+                            "name": "Имя"
+                        }
+                    }
+                }
+            }
+        },
+        "customers": {
+            "title": "Клиенты",
+            "add_btn_title": "Добавить нового клиента",
+            "edit_btn_title": "Редактировать",
+            "delete_btn_title": "Удалить",
+            "remove_btn_title": "Удалить",
+            "search_customers": "Поиск клиентов...",
+            "no_customers_found": "Клиенты не найдены.",
+            "no_current_customer": "Текущий клиент не выбран.",
+            "current_customer_removed": "Клиент успешно удален.",
+            "current_customer_updated": "Текущий клиент успешно обновлен.",
+            "customers": "Клиенты",
+            "offline_customers": "Офлайн клиенты",
+            "create": {
+                "title": "Добавить нового клиента",
+                "back_btn_title": "Назад",
+                "first_name": "Имя",
+                "last_name": "Фамилия",
+                "email": "Электронная почта",
+                "phone_number": "Номер телефона",
+                "address": "Адрес",
+                "city": "Город",
+                "state": "Штат",
+                "select_state": "Выберите штат",
+                "country": "Страна",
+                "select_country": "Выберите страну",
+                "pin_code": "Почтовый индекс",
+                "save_btn_title": "Добавить клиента",
+                "phone_already_exist": "Этот номер телефона уже используется.",
+                "email_already_exist": "Этот адрес электронной почты уже используется.",
+                "create_success": "Клиент успешно создан."
+            },
+            "edit": {
+                "title": "Редактировать клиента",
+                "back_btn_title": "Назад",
+                "first_name": "Имя",
+                "last_name": "Фамилия",
+                "email": "Электронная почта",
+                "phone_number": "Номер телефона",
+                "address": "Адрес",
+                "city": "Город",
+                "state": "Штат",
+                "select_state": "Выберите штат",
+                "country": "Страна",
+                "select_country": "Выберите страну",
+                "pin_code": "Почтовый индекс",
+                "save_btn_title": "Обновить клиента",
+                "phone_already_exist": "Этот номер телефона уже используется.",
+                "email_already_exist": "Этот адрес электронной почты уже используется.",
+                "update_success": "Клиент успешно обновлен."
+            }
+        },
+        "cashier": {
+            "title": "Кассир",
+            "cash_drawer": {
+                "title": "Денежный ящик",
+                "drawer_amount_summary": "Сводка суммы в ящике",
+                "opening_drawer_amount": "Начальная сумма в ящике",
+                "cash_payment_sale": "Продажа за наличные",
+                "other_payment_sale": "Продажа за другие способы оплаты",
+                "expected_drawer_amount": "Ожидаемая сумма в ящике",
+                "difference": "Разница",
+                "remarks": "Примечания",
+                "remarks_placeholder": "Введите примечания о закрытии кассы.",
+                "close_drawer": "Закрыть ящик"
+            },
+            "today_sale": {
+                "title": "Продажи за сегодня",
+                "opening_drawer_amount": "Начальная сумма в ящике",
+                "cash_payment_sale": "Продажа за наличные",
+                "other_payment_sale": "Продажа за другие способы оплаты",
+                "sale_history": "История продаж",
+                "filters": "Фильтры",
+                "order_id": "ID заказа",
+                "time": "Время",
+                "order_total": "Сумма заказа",
+                "payment_mode": "Способ оплаты",
+                "no_records": "Записи не найдены.",
+                "drawer": {
+                    "title": "Фильтр",
+                    "order_id": "ID Заказа",
+                    "time": "Время",
+                    "order_total": "Итог Заказа",
+                    "payment_mode": "Способ Оплаты",
+                    "select_payment_mode": "Выберите Способ Оплаты",
+                    "pos_cash": "Наличный расчет",
+                    "pos_card": "Оплата Картой",
+                    "pos_split": "Разделенный Платеж",
+                    "filter_btn_title": "Применить Фильтр"
+                }
+            },
+            "sale_history": {
+                "title": "История продаж",
+                "filters": "Фильтры",
+                "date": "Дата",
+                "cash_payments": "Оплата наличными",
+                "other_payments": "Оплата другими способами",
+                "total_sale": "Общая сумма продаж",
+                "drawer_note": "Примечание к ящику",
+                "no_records": "Записи не найдены.",
+                "drawer": {
+                    "title": "Фильтр",
+                    "date": "Дата",
+                    "cash_payment": "Наличный расчет",
+                    "other_payment": "Другой платеж",
+                    "total_sale": "Общая продажа",
+                    "filter_btn_title": "Применить фильтр"
+                }
+            }
+        },
+        "orders": {
+            "title": "Заказы",
+            "history": {
+                "title": "История",
+                "search_orders": "Поиск по ID заказа или имени клиента...",
+                "filters": "Фильтры",
+                "order_id": "ID заказа",
+                "date": "Дата",
+                "total_sales": "Общая сумма продаж",
+                "subtotal": "Промежуточный итог",
+                "tax": "Налог",
+                "no_records": "Записи не найдены."
+            },
+            "hold": {
+                "title": "Заказы На Ожидании",
+                "note": "Заметка",
+                "resume": "Возобновить",
+                "remove": "Удалить",
+                "remove_success": "Заказ успешно удалён.",
+                "resume_success": "Заказ успешно возобновлён.",
+                "no_orders": "Заказы не найдены."
+            },
+            "offline": {
+                "title": "Офлайн заказы",
+                "sync_order": "Синхронизация заказа",
+                "sync_all_orders": "Синхронизировать все заказы",
+                "search_order_id": "Поиск по ID заказа...",
+                "order_id": "ID заказа",
+                "date": "Дата",
+                "no_orders": "Офлайн-заказы не найдены.",
+                "sync_success": "Заказ успешно синхронизирован."
+            },
+            "info": {
+                "order_id": "ID заказа",
+                "subtotal": "Промежуточный итог",
+                "tax": "Налог",
+                "discount": "Скидка",
+                "grand_total": "Общая сумма",
+                "cash": "Наличные",
+                "balance": "Баланс",
+                "no_order_selected": "Не выбран ни один заказ для предварительного просмотра или печати счета."
+            },
+            "print": {
+                "btn_title": "Распечатать Счет",
+                "cashier": "Кассир",
+                "change": "Сдача",
+                "contact_info": "Контактная Информация",
+                "customer": "Клиент",
+                "customer_care": "Обслуживание Клиентов",
+                "date": "Дата",
+                "discount": "Скидка",
+                "email": "Эл. почта",
+                "grand_total": "Итоговая Сумма",
+                "item": "Товар",
+                "name": "Имя",
+                "order_id": "Номер Заказа",
+                "phone": "Телефон",
+                "price": "Цена",
+                "qty": "Кол-во",
+                "subtotal": "Промежуточный Итог",
+                "tax": "Налог",
+                "total": "Итого",
+                "total_qty": "Общее Количество",
+                "website": "Веб-сайт"
+            }              
+        },
+        "products": {
+            "title": "Продукты",
+            "low_stock_products": {
+                "title": "Продукты с Низким Запасом",
+                "qty": "{qty} Количество",
+                "purchase_request": "Запрос на Покупку",
+                "send_request_btn": "Отправить Запрос",
+                "no_purchase_request": "Запросов на покупку не найдено.",
+                "no_products": "Товары с низким уровнем запасов не найдены.",
+                "items_in_request": "{count} предметов в запросе на покупку.",
+                "view_btn_title": "Посмотреть",
+                "request": {
+                    "title": "Отправить Запрос на Количество",
+                    "requested_quantity": "Запрашиваемое Количество",
+                    "comment": "Комментарий",
+                    "comment_placeholder": "Введите комментарий",
+                    "add_btn_title": "Добавить Продукт",
+                    "cancel_btn_title": "Отмена",
+                    "already_exist": "Продукт уже существует в списке запросов."
+                }
+            },
+            "requested_products": {
+                "title": "Запрошенные товары",
+                "search_products": "Поиск товаров...",
+                "qty": "Кол-во:- {qty}",
+                "pending": "В ожидании",
+                "received": "Получено",
+                "declined": "Отклонено",
+                "no_products": "Запрос продукта не найден."
+            },
+            "settings": {
+                "title": "Настройки",
+                "minimum_qty": "Минимальное количество",
+                "save_btn_title": "Сохранить",
+                "save_success": "Настройки успешно сохранены."
+            }
+        },
+        "reports": {
+            "title": "Отчёты",
+            "day": "День",
+            "week": "Неделя",
+            "month": "Месяц"
+        },
+        "settings": {
+            "title": "Настройки",
+            "account": {
+                "title": "Настройки аккаунта",
+                "first_name": "Имя",
+                "last_name": "Фамилия",
+                "email": "Email",
+                "old_password": "Старый пароль",
+                "new_password": "Новый пароль",
+                "confirm_password": "Подтвердите пароль",
+                "update_btn_title": "Обновить аккаунт"
+            },
+            "other": {
+                "title": "Другое",
+                "locale": "Язык",
+                "select_locale": "Выберите язык",
+                "currency": "Валюта",
+                "select_currency": "Выберите валюту",
+                "save_btn_title": "Сохранить"
+            },
+            "save_success": "Настройки успешно сохранены."
+        },
+        "payment": {
+            "title": "Оплата",
+            "back": "Назад",
+            "order_details": "Детали заказа",
+            "subtotal": "Промежуточный итог",
+            "tax": "Налог",
+            "discount": "Скидка",
+            "grand_total": "Общая сумма",
+            "payable_amount": "Сумма к оплате",
+            "received": "Получено",
+            "remaining": "Остаток",
+            "pos_cash": "Наличные",
+            "pos_card": "Карта",
+            "pos_split": "Разделить",
+            "cancel": "Отмена",
+            "card_details": "Детали карты",
+            "bank": "Банк",
+            "select_bank": "Выбрать банк",
+            "other": "Другой",
+            "confirm_payment": "Подтвердить оплату",
+            "empty_cart": "Корзина пуста!",
+            "amount_exceeded": "Превышена сумма к оплате!",
+            "order_placed": "Заказ успешно оформлен."
+        }
+    }
+}

@@ -1,0 +1,75 @@
+#outlet\home\products states related APIs
+extend type Query @guard(with: ["pos_user"]) {
+    getOutletCategories(
+        first: Int,
+        page: Int
+    ): [Category!] @paginate(
+        type: "PAGINATOR",
+        builder: "Webkul\\Pos\\Queries\\Home\\HomeQuery@getCategories",
+        defaultCount: 10
+    )
+
+    getOutletProducts(
+        first: Int,
+        page: Int
+    ): [OutletProductResult!] @paginate(
+        type: "PAGINATOR",
+        builder: "Webkul\\Pos\\Queries\\Home\\HomeQuery@getProducts",
+        defaultCount: 10
+    )
+}
+
+type OutletProductResult {
+    id: Int!
+    sku: String
+    type: String
+    name: String
+    quantity: Int
+    price: Float
+    convertedPrice: Float @field(resolver: "Webkul\\Pos\\Queries\\Home\\HomeQuery@getConvertedPrice")
+    barcode: String
+    priceHtml: String @field(resolver: "Webkul\\Pos\\Queries\\Home\\HomeQuery@getPriceHtml")
+    images: [ProductImage]
+    categories: [Category] @belongsToMany(relation: "categories")
+    variantConfigurations: String @field(resolver: "Webkul\\Pos\\Queries\\Home\\HomeQuery@getVariantsConfig")
+    downloadableSamples: [ProductDownloadableSample] @hasMany(relation: "downloadable_samples")
+    downloadableLinks: [ProductDownloadableLink] @hasMany(relation: "downloadable_links")
+    groupedProducts: [ProductGroupedProduct] @hasMany(relation: "grouped_products")
+    options: [BundleOption] @field(resolver: "Webkul\\Pos\\Queries\\Home\\HomeQuery@getBundleOptions")
+}
+
+type ProductImage {
+    id: Int!
+    url: String
+}
+
+type BundleOption {
+    id: Int!
+    label: String
+    type: String
+    isRequired: Boolean @rename(attribute: "is_required")
+    sortOrder: Int @rename(attribute: "sort_order")
+    products: [BundleOptionProduct]
+}
+
+type BundleOptionProduct {
+    id: Int!
+    qty: Int
+    name: String
+    productId: Int @rename(attribute: "product_id")
+    isDefault: Boolean @rename(attribute: "is_default")
+    sortOrder: Int @rename(attribute: "sort_order")
+    inStock: Boolean @rename(attribute: "in_stock")
+    inventory: Int
+    price: Price
+}
+
+type Price {
+    regular: RegularOrFinalPrice
+    final: RegularOrFinalPrice
+}
+
+type RegularOrFinalPrice {
+    price: Float
+    formattedPrice: String @rename(attribute: "formatted_price")
+}

@@ -1,0 +1,420 @@
+{
+    "pos": {
+        "title": "বাগিস্তো POS",
+        "page_not_found": {
+            "title": "কিছু একটা নেই।",
+            "message": "দুঃখিত, আমরা সেই পৃষ্ঠাটি খুঁজে পাচ্ছি না। আপনি হোম পৃষ্ঠায় অনেক কিছু অন্বেষণ করতে পারবেন।",
+            "back_btn_title": "হোমপেজে ফিরে যান"
+        },
+        "login_form": {
+            "title": "লগইন",
+            "user_name": "ব্যবহারকারীর নাম",
+            "user_name_placeholder": "ব্যবহারকারীর নাম প্রবেশ করান",
+            "password": "পাসওয়ার্ড",
+            "password_placeholder": "পাসওয়ার্ড প্রবেশ করান",
+            "remember_password": "পাসওয়ার্ড মনে রাখুন",
+            "login_btn_title": "লগইন"
+        },
+        "footer": {
+            "warning": "Webkul কোনও তৃতীয় পক্ষের বিক্রেতাদের Webkul মডিউলগুলি পুনরায় বিক্রি করার অনুমোদন দেয় না।",
+            "copyright": "© কপিরাইট ২০১০-২০২৩, Webkul Software (ভারত/যুক্তরাষ্ট্রে নিবন্ধিত)। সর্বস্বত্ব সংরক্ষিত।"
+        },
+        "layout": {
+            "header": {
+                "title": "বাগিস্তো POS",
+                "search_products": "পণ্য অনুসন্ধান করুন...",
+                "hold_orders": "অপেক্ষমান আদেশ",
+                "barcode_form": {
+                    "title": "বারকোড প্রবেশ করান",
+                    "barcode_placeholder": "পণ্যের বারকোড প্রবেশ করান",
+                    "cancel_btn_title": "বাতিল করুন",
+                    "proceed_btn_title": "অগ্রসর"
+                },
+                "product_create_form": {
+                    "title": "নতুন পণ্য যোগ করুন",
+                    "name": "নাম",
+                    "sku": "এসকিউ",
+                    "price": "মূল্য",
+                    "weight": "ওজন",
+                    "quantity": "পরিমাণ",
+                    "cancel_btn_title": "বাতিল করুন",
+                    "proceed_btn_title": "পরবর্তী"
+                }
+            },
+            "sidebar": {
+                "home": "হোম",
+                "customers": "গ্রাহকরা",
+                "cashier": "ক্যাশিয়ার",
+                "orders": "অর্ডার",
+                "products": "পণ্য",
+                "reports": "রিপোর্ট",
+                "settings": "সেটিংস",
+                "logout": "লগআউট"
+            },
+            "main": {
+                "progress_modal": {
+                    "title": "ডেটা সিঙ্ক করা হচ্ছে",
+                    "description": "আমরা ডেটা সিঙ্ক করছি, দয়া করে অপেক্ষা করুন। এটি কিছু সময় লাগতে পারে।",
+                    "products": "পণ্য",
+                    "categories": "বিভাগ",
+                    "customers": "গ্রাহকরা",
+                    "orders": "অর্ডার"
+                },
+                "cash_drawer": {
+                    "title": "নগদ টানা",
+                    "opening_drawer_amount": "টানার পরিমাণ",
+                    "remarks": "মন্তব্য",
+                    "remarks_placeholder": "কাউন্টার বন্ধ করার মন্তব্য লিখুন।",
+                    "open_drawer": "টানা খোলুন"
+                }
+            }
+        },
+        "common": {
+            "cart": {
+                "add_customer": "গ্রাহক যোগ করুন",
+                "add": "যোগ করুন",
+                "quantity": "পরিমাণ",
+                "discount": "ছাড়",
+                "coupon_code": "কুপন কোড",
+                "note": "মন্তব্য",
+                "subtotal": "মোট উপপরিমাণ",
+                "tax": "কর",
+                "payable_amount": "প্রদেয় পরিমাণ",
+                "hold_order": "অর্ডার রাখুন",
+                "hold_order_success": "অর্ডার সফলভাবে স্থগিত করা হয়েছে।",
+                "create_success": "কার্ট সফলভাবে তৈরি হয়েছে।",
+                "update_success": "কার্ট সফলভাবে আপডেট হয়েছে।",
+                "remove_success": "কার্ট সফলভাবে সরানো হয়েছে।",
+                "product_add_success": "পণ্যটি কার্টে সফলভাবে যোগ করা হয়েছে!",
+                "product_remove_success": "পণ্যটি কার্ট থেকে সফলভাবে সরানো হয়েছে!",
+                "no_cart_selected": "কোনো কার্ট নির্বাচিত হয়নি।",
+                "no_customer_selected": "কোনো গ্রাহক নির্বাচিত হয়নি।",
+                "customer_exists": "নির্বাচিত গ্রাহকের জন্য কার্ট ইতিমধ্যে বিদ্যমান।",
+                "proceed": "অগ্রসর",
+                "coupon_form": {
+                    "title": "কুপন কোড",
+                    "cancel_btn_title": "বাতিল করুন",
+                    "proceed_btn_title": "অগ্রসর"
+                },
+                "order_note_form": {
+                    "title": "অর্ডার নোট",
+                    "note_placeholder": "অর্ডার নোট প্রবেশ করান",
+                    "cancel_btn_title": "বাতিল করুন",
+                    "proceed_btn_title": "অগ্রসর",
+                    "create_success": "অর্ডার নোট সফলভাবে যোগ করা হয়েছে।",
+                    "remove_success": "অর্ডার নোট সফলভাবে মুছে ফেলা হয়েছে।"
+                }
+            },
+            "flash_messages": {
+                "close": "বন্ধ করুন",
+                "error_message": "কিছু ভুল হয়েছে! অনুগ্রহ করে আবার চেষ্টা করুন।",
+                "offline_error": "সতর্কতা, আপনি অফলাইন মোডে আছেন"
+            },
+            "confirm_modal": {
+                "title": "আপনি কি নিশ্চিত?",
+                "description": "আপনি কি এই কাজটি করতে চান?",
+                "disagree_btn_title": "অমত",
+                "agree_btn_title": "সম্মত"
+            }
+        },
+        "home": {
+            "title": "হোম",
+            "print_confirmation_title": "প্রিন্ট নিশ্চিতকরণ?",
+            "print_confirm_message": "আপনি কি শেষ অর্ডারের রসিদ প্রিন্ট করতে চান?",
+            "items_in_cart": "কার্টে {count}টি আইটেম রয়েছে।",
+            "view_cart_btn": "কার্ট দেখুন",
+            "categories": {
+                "all": "সকল"
+            },
+            "product": {
+                "view": {
+                    "qty": "{qty} পরিমাণ",
+                    "add_to_cart": "কার্টে যোগ করুন",
+                    "type": {
+                        "bundle": {
+                            "total_amount": "মোট পরিমাণ",
+                            "none": "কোন প্যাকেজ অপশন উপলব্ধ নেই"
+                        },
+                        "configurable": {
+                            "select_option": "অপশনগুলি নির্বাচন করুন",
+                            "select_above_option": "দয়া করে প্রথমে উপরের অপশনগুলি নির্বাচন করুন।",
+                            "price": "নির্বাচিত ভ্যারিয়েন্ট মূল্য"
+                        },
+                        "downloadable": {
+                            "samples": "নমুনা",
+                            "links": "লিঙ্ক"
+                        },
+                        "grouped": {
+                            "name": "নাম"
+                        }
+                    }
+                }
+            }
+        },
+        "customers": {
+            "title": "গ্রাহকরা",
+            "add_btn_title": "নতুন গ্রাহক যোগ করুন",
+            "edit_btn_title": "সম্পাদনা করুন",
+            "delete_btn_title": "মুছে ফেলুন",
+            "remove_btn_title": "অপসারণ করুন",
+            "search_customers": "গ্রাহক অনুসন্ধান করুন...",
+            "no_customers_found": "কোনও গ্রাহক পাওয়া যায়নি।",
+            "no_current_customer": "কোনও বর্তমান গ্রাহক নির্বাচিত হয়নি।",
+            "current_customer_removed": "গ্রাহক সফলভাবে অপসারণ করা হয়েছে।",
+            "current_customer_updated": "বর্তমান গ্রাহক সফলভাবে আপডেট করা হয়েছে।",
+            "customers": "গ্রাহকরা",
+            "offline_customers": "অফলাইন গ্রাহকরা",
+            "create": {
+                "title": "নতুন গ্রাহক যোগ করুন",
+                "back_btn_title": "ফিরে যান",
+                "first_name": "প্রথম নাম",
+                "last_name": "শেষ নাম",
+                "email": "ইমেল",
+                "phone_number": "ফোন নম্বর",
+                "address": "ঠিকানা",
+                "city": "শহর",
+                "state": "রাজ্য",
+                "select_state": "রাজ্য নির্বাচন করুন",
+                "country": "দেশ",
+                "select_country": "দেশ নির্বাচন করুন",
+                "pin_code": "পিন কোড",
+                "save_btn_title": "গ্রাহক যোগ করুন",
+                "phone_already_exist": "ফোন নম্বরটি ইতিমধ্যে নেওয়া হয়েছে।",
+                "email_already_exist": "ইমেলটি ইতিমধ্যে নেওয়া হয়েছে।",
+                "create_success": "গ্রাহক সফলভাবে তৈরি হয়েছে।"
+            },
+            "edit": {
+                "title": "গ্রাহক সম্পাদনা করুন",
+                "back_btn_title": "ফিরে যান",
+                "first_name": "প্রথম নাম",
+                "last_name": "শেষ নাম",
+                "email": "ইমেল",
+                "phone_number": "ফোন নম্বর",
+                "address": "ঠিকানা",
+                "city": "শহর",
+                "state": "রাজ্য",
+                "select_state": "রাজ্য নির্বাচন করুন",
+                "country": "দেশ",
+                "select_country": "দেশ নির্বাচন করুন",
+                "pin_code": "পিন কোড",
+                "save_btn_title": "গ্রাহক আপডেট করুন",
+                "phone_already_exist": "ফোন নম্বরটি ইতিমধ্যে নেওয়া হয়েছে।",
+                "email_already_exist": "ইমেলটি ইতিমধ্যে নেওয়া হয়েছে।",
+                "update_success": "গ্রাহক সফলভাবে আপডেট হয়েছে।"
+            }
+        },
+        "cashier": {
+            "title": "ক্যাশিয়ার",
+            "cash_drawer": {
+                "title": "ক্যাশ ড্রয়ার",
+                "drawer_amount_summary": "ড্রয়ার পরিমাণ সারাংশ",
+                "opening_drawer_amount": "উদ্বোধনী ড্রয়ার পরিমাণ",
+                "cash_payment_sale": "নগদ বিক্রয়",
+                "other_payment_sale": "অন্যান্য পেমেন্ট বিক্রয়",
+                "expected_drawer_amount": "প্রত্যাশিত ড্রয়ার পরিমাণ",
+                "difference": "পার্থক্য",
+                "remarks": "মন্তব্য",
+                "remarks_placeholder": "কাউন্টার ক্লোজার মন্তব্য প্রবেশ করান।",
+                "close_drawer": "ড্রয়ার বন্ধ করুন"
+            },
+            "today_sale": {
+                "title": "আজকের বিক্রয়",
+                "opening_drawer_amount": "উদ্বোধনী ড্রয়ার পরিমাণ",
+                "cash_payment_sale": "নগদ বিক্রয়",
+                "other_payment_sale": "অন্যান্য পেমেন্ট বিক্রয়",
+                "sale_history": "বিক্রয়ের ইতিহাস",
+                "filters": "ফিল্টার",
+                "order_id": "অর্ডার আইডি",
+                "time": "সময়",
+                "order_total": "অর্ডারের মোট",
+                "payment_mode": "পেমেন্ট মোড",
+                "no_records": "কোনও রেকর্ড পাওয়া যায়নি।",
+                "drawer": {
+                    "title": "ফিল্টার",
+                    "order_id": "অর্ডার আইডি",
+                    "time": "সময়",
+                    "order_total": "অর্ডার মোট",
+                    "payment_mode": "পেমেন্ট মোড",
+                    "select_payment_mode": "পেমেন্ট মোড নির্বাচন করুন",
+                    "pos_cash": "নগদ প্রদান",
+                    "pos_card": "কার্ড প্রদান",
+                    "pos_split": "বিভাজিত প্রদান",
+                    "filter_btn_title": "ফিল্টার প্রয়োগ করুন"
+                }
+            },
+            "sale_history": {
+                "title": "বিক্রয়ের ইতিহাস",
+                "filters": "ফিল্টার",
+                "date": "তারিখ",
+                "cash_payments": "নগদ পেমেন্ট",
+                "other_payments": "অন্যান্য পেমেন্ট",
+                "total_sale": "মোট বিক্রয়",
+                "drawer_note": "ড্রয়ার নোট",
+                "no_records": "কোনও রেকর্ড পাওয়া যায়নি।",
+                "drawer": {
+                    "title": "ফিল্টার",
+                    "date": "তারিখ",
+                    "cash_payment": "নগদ পেমেন্ট",
+                    "other_payment": "অন্যান্য পেমেন্ট",
+                    "total_sale": "মোট বিক্রয়",
+                    "filter_btn_title": "ফিল্টার প্রয়োগ করুন"
+                }
+            }
+        },
+        "orders": {
+            "title": "অর্ডারসমূহ",
+            "history": {
+                "title": "ইতিহাস",
+                "search_orders": "অর্ডার আইডি বা গ্রাহকের নাম অনুসন্ধান করুন...",
+                "filters": "ফিল্টার",
+                "order_id": "অর্ডার আইডি",
+                "date": "তারিখ",
+                "total_sales": "মোট বিক্রয়",
+                "subtotal": "মোট উপপরিমাণ",
+                "tax": "কর",
+                "no_records": "কোনও রেকর্ড পাওয়া যায়নি।"
+            },
+            "hold": {
+                "title": "অস্থগিত অর্ডার",
+                "note": "টীকা",
+                "resume": "পুনরায় শুরু করুন",
+                "remove": "অপসারণ করুন",
+                "remove_success": "অর্ডার সফলভাবে অপসারিত হয়েছে।",
+                "resume_success": "অর্ডার সফলভাবে পুনরায় শুরু করা হয়েছে।",
+                "no_orders": "কোন অর্ডার পাওয়া যায়নি।"
+            },
+            "offline": {
+                "title": "অফলাইন আদেশ",
+                "sync_order": "অর্ডার সিঙ্ক",
+                "sync_all_orders": "সমস্ত অর্ডার সিঙ্ক করুন",
+                "search_order_id": "অর্ডার আইডি অনুসন্ধান করুন...",
+                "order_id": "অর্ডার আইডি",
+                "date": "তারিখ",
+                "no_orders": "কোনো অফলাইন অর্ডার পাওয়া যায়নি।",
+                "sync_success": "অর্ডার সফলভাবে সিঙ্ক হয়েছে।"
+            },
+            "info": {
+                "order_id": "অর্ডার আইডি",
+                "subtotal": "মোট উপপরিমাণ",
+                "tax": "কর",
+                "discount": "ছাড়",
+                "grand_total": "মোট",
+                "cash": "নগদ",
+                "balance": "ব্যালেন্স",
+                "no_order_selected": "কোনো অর্ডার নির্বাচিত করা হয়নি দেখার বা প্রিন্ট করার জন্য।"
+            },
+            "print": {
+                "btn_title": "ইনভয়েস প্রিন্ট করুন",
+                "cashier": "ক্যাশিয়ার",
+                "change": "বাকী",
+                "contact_info": "যোগাযোগের তথ্য",
+                "customer": "গ্রাহক",
+                "customer_care": "গ্রাহক সেবা",
+                "date": "তারিখ",
+                "discount": "ছাড়",
+                "email": "ইমেইল",
+                "grand_total": "মোট পরিমাণ",
+                "item": "পণ্য",
+                "name": "নাম",
+                "order_id": "অর্ডার নম্বর",
+                "phone": "ফোন",
+                "price": "মূল্য",
+                "qty": "পরিমাণ",
+                "subtotal": "সাবটোটাল",
+                "tax": "কর",
+                "total": "মোট",
+                "total_qty": "মোট পরিমাণ",
+                "website": "ওয়েবসাইট"
+            }              
+        },
+        "products": {
+            "title": "পণ্যসমূহ",
+            "low_stock_products": {
+                "title": "কম স্টক পণ্য",
+                "qty": "{qty} পরিমাণ",
+                "purchase_request": "ক্রয় অনুরোধ",
+                "send_request_btn": "অনুরোধ পাঠান",
+                "no_purchase_request": "কোন ক্রয় অনুরোধ পাওয়া যায়নি।",
+                "no_products": "কোনও কম স্টকযুক্ত পণ্য পাওয়া যায়নি।",
+                "items_in_request": "ক্রয়ের অনুরোধে {count} টি আইটেম।",
+                "view_btn_title": "দেখুন",
+                "request": {
+                    "title": "পরিমাণ অনুরোধ পাঠান",
+                    "requested_quantity": "অনুরোধ করা পরিমাণ",
+                    "comment": "মন্তব্য",
+                    "comment_placeholder": "মন্তব্য লিখুন",
+                    "add_btn_title": "পণ্য যোগ করুন",
+                    "cancel_btn_title": "বাতিল করুন",
+                    "already_exist": "পণ্যটি ইতিমধ্যে অনুরোধের তালিকায় রয়েছে।"
+                }
+            },
+            "requested_products": {
+                "title": "অনুরোধকৃত পণ্য",
+                "search_products": "পণ্য অনুসন্ধান করুন...",
+                "qty": "পরিমাণ:- {qty}",
+                "pending": "অপেক্ষমান",
+                "received": "গৃহীত",
+                "declined": "অস্বীকৃত",
+                "no_products": "কোনও পণ্যের অনুরোধ পাওয়া যায়নি।"
+            },
+            "settings": {
+                "title": "সেটিংস",
+                "minimum_qty": "ন্যূনতম পরিমাণ",
+                "save_btn_title": "সংরক্ষণ করুন",
+                "save_success": "পণ্য সফলভাবে সংরক্ষিত হয়েছে।"
+            }
+        },
+        "reports": {
+            "title": "রিপোর্টসমূহ",
+            "day": "দিন",
+            "week": "সপ্তাহ",
+            "month": "মাস"
+        },
+        "settings": {
+            "title": "সেটিংস",
+            "account": {
+                "title": "অ্যাকাউন্ট সেটিংস",
+                "first_name": "প্রথম নাম",
+                "last_name": "শেষ নাম",
+                "email": "ইমেল",
+                "old_password": "পুরানো পাসওয়ার্ড",
+                "new_password": "নতুন পাসওয়ার্ড",
+                "confirm_password": "পাসওয়ার্ড নিশ্চিত করুন",
+                "update_btn_title": "অ্যাকাউন্ট আপডেট করুন"
+            },
+            "other": {
+                "title": "অন্যান্য",
+                "locale": "লোকেল",
+                "select_locale": "লোকেল নির্বাচন করুন",
+                "currency": "মুদ্রা",
+                "select_currency": "মুদ্রা নির্বাচন করুন",
+                "save_btn_title": "সংরক্ষণ করুন"
+            },
+            "save_success": "সেটিংস সফলভাবে সংরক্ষিত হয়েছে।"
+        },
+        "payment": {
+            "title": "পেমেন্ট",
+            "back": "ফিরে",
+            "order_details": "অর্ডার বিবরণ",
+            "subtotal": "মোট উপপরিমাণ",
+            "tax": "কর",
+            "discount": "ছাড়",
+            "grand_total": "মোট",
+            "payable_amount": "প্রদেয় পরিমাণ",
+            "received": "গৃহীত",
+            "remaining": "অবশিষ্ট",
+            "pos_cash": "নগদ",
+            "pos_card": "কার্ড",
+            "pos_split": "বিভক্ত",
+            "cancel": "বাতিল",
+            "card_details": "কার্ড বিবরণ",
+            "bank": "ব্যাংক",
+            "select_bank": "ব্যাংক নির্বাচন করুন",
+            "other": "অন্যান্য",
+            "confirm_payment": "পেমেন্ট নিশ্চিত করুন",
+            "empty_cart": "কার্ট খালি",
+            "amount_exceeded": "প্রদেয় পরিমাণ অতিক্রান্ত হয়েছে!",
+            "order_placed": "অর্ডার সফলভাবে দেওয়া হয়েছে।"
+        }
+    }
+}

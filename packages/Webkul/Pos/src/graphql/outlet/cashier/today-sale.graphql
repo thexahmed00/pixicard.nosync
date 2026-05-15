@@ -1,0 +1,39 @@
+#outlet\cashier\today-sale.graphql
+
+extend type Query @guard(with: ["pos_user"]) {
+    getTodaySales(
+        orderId: Int @rename(attribute: "order_id")
+        time: String
+        orderTotal: Int @rename(attribute: "order_total")
+        paymentMode: String @rename(attribute: "payment_mode")
+    ): todaySalesResult @field(resolver: "Webkul\\Pos\\Queries\\Cashier\\CashierQuery@getTodaySales")
+
+    getSaleHistory(
+        date: String
+        cashPayment: Int @rename(attribute: "cash_payment")
+        otherPayment: Int @rename(attribute: "other_payment")
+        totalSale: Int @rename(attribute: "total_sale")
+    ): [SaleHistoryResult] @field(resolver: "Webkul\\Pos\\Queries\\Cashier\\CashierQuery@getSaleHistory")
+}
+
+type todaySalesResult {
+    openingAmount: String @rename(attribute: "opening_amount")
+    cashPaymentSale: String @rename(attribute: "cash_payment_sale")
+    otherPaymentSale: String @rename(attribute: "other_payment_sale")
+    orders: [TodaySalesOrder]
+}
+
+type TodaySalesOrder {
+    orderId: Int @rename(attribute: "order_id")
+    orderTotal: String @rename(attribute: "order_total")
+    paymentMode: String @rename(attribute: "payment_mode")
+    createdAt: String @rename(attribute: "created_at")
+}
+
+type SaleHistoryResult {
+    createdAt: String @rename(attribute: "created_at")
+    cashPayment: String @rename(attribute: "cash_payment")
+    otherPayment: String @rename(attribute: "other_payment")
+    totalSale: String @rename(attribute: "total_sale")
+    drawerNote: String @rename(attribute: "drawer_note")
+}

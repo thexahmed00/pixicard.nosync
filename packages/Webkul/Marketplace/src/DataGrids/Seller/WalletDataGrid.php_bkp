@@ -1,0 +1,125 @@
+<?php
+
+namespace Webkul\Marketplace\DataGrids\Seller;
+
+use Illuminate\Database\Query\Builder;
+use Illuminate\Support\Facades\DB;
+use Webkul\DataGrid\DataGrid;
+
+class WalletDataGrid extends DataGrid
+{
+    /**
+     * Primary column.
+     *
+     * @var string
+     */
+    protected $primaryColumn = 'id';
+
+    /**
+     * Prepare query builder.
+     */
+    public function prepareQueryBuilder(): Builder
+    {
+        $sellerId = auth()->guard('seller')->user()->id;
+
+        $queryBuilder = DB::table('seller_wallets')
+            ->addSelect('id', 'vendor_id', 'amount', 'transaction_id', 'created_at', 'status')
+            ->where('seller_id', $sellerId);
+
+        // No filters are defined here. They are defined in prepareColumns().
+        
+        return $queryBuilder;
+    }
+
+    /**
+     * Prepare columns.
+     */
+    public function prepareColumns(): void
+    {
+        $this->addColumn([
+            'index'      => 'vendor_id',
+            'label'      => 'Vendor',
+            'type'       => 'string',
+            'searchable' => false,
+            'sortable'   => true,
+            'closure'    => function ($row) {
+                return $row->vendor_id == 1 ? 'LikeCard' : $row->vendor_id;
+            },
+        ]);
+
+        $this->addColumn([
+            'index'      => 'amount',
+            'label'      => 'Amount',
+            'type'       => 'string',
+            'searchable' => false,
+            'sortable'   => true,
+            'closure'    => function ($row) {
+                return core()->currency($row->amount);
+            },
+        ]);
+
+        $this->addColumn([
+            'index'      => 'transaction_id',
+            'label'      => 'Transaction ID',
+            'type'       => 'integer',
+            'searchable' => false,
+            'sortable'   => true,
+        ]);
+
+        // --- THIS IS THE CORRECTED STATUS COLUMN ---
+        $this->addColumn([
+            'index'              => 'status',
+            'label'              => 'Status',
+            'type'               => 'string',
+            'filterable'         => true, // Must be true to enable filtering
+            'filterable_type'    => 'dropdown', // Defines the filter type
+            'filterable_options' => [ // Provides the options for the dropdown
+                ['label' => 'Pending', 'value' => 'pending'],
+                ['label' => 'Pending Approval', 'value' => 'pending_approval'],
+                ['label' => 'Success', 'value' => 'success'],
+                ['label' => 'Failed', 'value' => 'failed'],
+                ['label' => 'Rejected', 'value' => 'rejected'],
+            ],
+            'sortable'   => true,
+            'closure'    => function ($row) {
+                $status = ucfirst($row->status);
+
+                if ($row->status == 'pending') {
+                    return "<span class='label-pending'>$status</span>";
+                } elseif ($row->status == 'pending_approval') {
+                    return "<span class='label-pending'>Pending Approval</span>";
+                } elseif ($row->status == 'rejected') {
+                    return "<span class='label-canceled'>Rejected</span>";
+                } elseif ($row->status == 'success') {
+                    return "<span class='label-active'>$status</span>";
+                } elseif ($row->status == 'failed') {
+                    return "<span class='label-canceled'>$status</span>";
+                }
+                
+                return $status;
+            },
+        ]);
+        // --- END OF CORRECTION ---
+
+        $this->addColumn([
+            'index'      => 'created_at',
+            'label'      => 'Date',
+            'type'       => 'string',
+            'sortable'   => true,
+            'closure'    => function ($row) {
+                return date('d-m-Y H:i:s', strtotime($row->created_at));
+            },
+        ]);
+    }
+    
+    /**
+     * Actions are removed by commenting out or deleting this method.
+     */
+    /*
+    public function prepareActions(): void
+    {
+        // Actions are intentionally left empty
+    }
+    */
+}
+

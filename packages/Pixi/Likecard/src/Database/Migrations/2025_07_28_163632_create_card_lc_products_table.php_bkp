@@ -1,0 +1,50 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('card_lc_products', function (Blueprint $table) {
+            $table->bigIncrements('productId');
+            $table->bigInteger('categoryId')->unsigned();
+            $table->string('productName', 60);
+            $table->decimal('productPrice', 10, 2);
+            $table->decimal('productPriceWithoutVat', 10, 2);
+            $table->string('productImage', 200);
+            $table->string('productCurrency', 5);
+            $table->boolean('optionalFieldsExist');
+            $table->text('productOptionalFields')->nullable();
+            $table->decimal('sellPrice', 10, 2);
+            $table->decimal('sellPriceWithoutVat', 10, 2);
+            $table->boolean('available');
+            $table->boolean('status')->default(1);
+            $table->string('name_ar', 191)->nullable();
+            $table->string('name_fr', 191)->nullable(); // You had name_fr twice, I assumed one was a typo
+            $table->string('name_ur', 191)->nullable(); // Added name_ur based on other table
+            $table->json('translation')->nullable();
+            $table->decimal('vatAmount', 10, 2);
+            $table->decimal('vatPercentage', 10, 2);
+            $table->string('productImageWhiteLabel', 200);
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('card_lc_products');
+    }
+};

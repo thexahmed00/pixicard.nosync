@@ -1,0 +1,1058 @@
+{
+	"info": {
+		"_postman_id": "f2dca64a-09ec-4836-a041-de0d81c2634d",
+		"name": "POS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36950150"
+	},
+	"item": [
+		{
+			"name": "Outlet",
+			"item": [
+				{
+					"name": "Agents",
+					"item": [
+						{
+							"name": "Login",
+							"item": [
+								{
+									"name": "Global Data",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{agentToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "query fetchGlobalData {\n    fetchGlobalData {\n        loginPageContent {\n            posLogo\n            heading\n            subHeading\n            footerContent\n            footerNote\n        }\n        locales {\n            code\n            name\n            direction\n        }\n        currencies {\n            code\n            name\n            symbol\n        }\n        countries {\n            id\n            code\n            name\n        }\n        countryStates {\n            countryCode\n            states {\n                id\n                countryId\n                countryCode\n                code\n                defaultName\n            }\n        }\n    }\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "{{url}}",
+											"host": [
+												"{{url}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Login",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "mutation agentLogin (\n    $input: AgentLoginInput!\n) {\n    agentLogin (\n        input: $input\n    ) {\n        success\n        errors\n        message\n        accessToken\n        agent {\n            outletId\n            username\n            firstName\n            lastName\n            email\n            image\n            imageUrl\n            lowStock\n            reportType\n            status\n            changed\n            createdAt\n            updatedAt\n            outlet {\n                id\n                name\n                address\n                country\n                state\n                city\n                postcode\n                status\n                receiptId\n                inventorySourceId\n                createdAt\n                updatedAt\n                receipt {\n                    id\n                    title\n                    status\n                    displayOutletName\n                    displayDate\n                    displayOrderId\n                    orderIdLabel\n                    displayCustomerName\n                    displaySubTotal\n                    subTotalLabel\n                    displayDiscount\n                    discountLabel\n                    displayTax\n                    taxLabel\n                    displayCreditAmount\n                    creditAmountLabel\n                    displayChangeAmount\n                    creditChangeLabel\n                    displayCashierName\n                    cashierLabel\n                    displayOutletAddress\n                    grandTotalLabel\n                    displayLogo\n                    logo\n                    logoUrl\n                    logoWidth\n                    logoHeight\n                    logoAlt\n                    headerContent\n                    footerContent\n                    createdAt\n                    updatedAt\n                }\n                inventorySource {\n                    id\n                    code\n                    name\n                    description\n                    contactName\n                    contactEmail\n                    contactNumber\n                    contactFax\n                    country\n                    state\n                    city\n                    street\n                    postcode\n                    priority\n                    latitude\n                    longitude\n                    status\n                    createdAt\n                    updatedAt\n                }\n            }\n            banks {\n                id\n                name\n            }\n        }\n    }\n}",
+												"variables": "{\n    \"input\" : {\n        \"username\": \"mayank\",\n        \"password\": \"mayank123\",\n        \"remember\": true\n    }\n}"
+											}
+										},
+										"url": {
+											"raw": "{{url}}",
+											"host": [
+												"{{url}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Secured",
+							"item": [
+								{
+									"name": "Account",
+									"item": [
+										{
+											"name": "Logout",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "mutation agentLogout {\n    agentLogout {\n        success\n        message\n    }\n}",
+														"variables": ""
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Profile Update",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4xNS4yMDQvQmFnaXN0bzIuMC9sb2NhbC9oZWFkbGVzc18yLjAvcHVibGljL2dyYXBocWwiLCJpYXQiOjE3MDQ0NTA4NzQsImV4cCI6MTczNTk4Njg3NCwibmJmIjoxNzA0NDUwODc0LCJqdGkiOiJtb05KQXV3bHZHaVJzYzJkIiwic3ViIjoiMjEiLCJwcnYiOiJjODliMGU1MDEzNTM2YjQwNDkwNGZiYjMzN2ZlYzI4YjE0NDgyYjdmIn0.d6AahqEerCmQo_Ki9DRfAx8wxPP0Wn18byj5GPyGtR4",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "mutation updateProfile (\n    $input: UpdateProfileInput!\n) {\n    updateProfile (\n        input: $input\n    ) {\n        success\n        errors\n        message\n        agent {\n            outletId\n            username\n            firstName\n            lastName\n            email\n            image\n            imageUrl\n            lowStock\n            reportType\n            status\n            changed\n            createdAt\n            updatedAt\n            outlet {\n                id\n                name\n                address\n                country\n                state\n                city\n                postcode\n                status\n                receiptId\n                inventorySourceId\n                createdAt\n                updatedAt\n                receipt {\n                    id\n                    title\n                    status\n                    displayOutletName\n                    displayDate\n                    displayOrderId\n                    orderIdLabel\n                    displayCustomerName\n                    displaySubTotal\n                    subTotalLabel\n                    displayDiscount\n                    discountLabel\n                    displayTax\n                    taxLabel\n                    displayCreditAmount\n                    creditAmountLabel\n                    displayChangeAmount\n                    creditChangeLabel\n                    displayCashierName\n                    cashierLabel\n                    displayOutletAddress\n                    grandTotalLabel\n                    displayLogo\n                    logo\n                    logoUrl\n                    logoWidth\n                    logoHeight\n                    logoAlt\n                    headerContent\n                    footerContent\n                    createdAt\n                    updatedAt\n                }\n                inventorySource {\n                    id\n                    code\n                    name\n                    description\n                    contactName\n                    contactEmail\n                    contactNumber\n                    contactFax\n                    country\n                    state\n                    city\n                    street\n                    postcode\n                    priority\n                    latitude\n                    longitude\n                    status\n                    createdAt\n                    updatedAt\n                }\n            }\n            banks {\n                id\n                name\n            }\n        }\n    }\n}",
+														"variables": "{\n    \"input\" : {\n        \"firstName\": \"Mayank\",\n        \"lastName\": \"Singh\",\n        \"email\": \"mayank@singh.com\",\n        \"oldPassword\": \"mayank123\",\n        \"newPassword\": \"mayank123\",\n        \"newPasswordConfirmation\": \"mayank123\"\n    }\n}"
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Customers",
+									"item": [
+										{
+											"name": "Create",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4xNS4yMDQvQmFnaXN0bzIuMC9sb2NhbC9oZWFkbGVzc18yLjAvcHVibGljL2dyYXBocWwiLCJpYXQiOjE3MDQ0NTA4NzQsImV4cCI6MTczNTk4Njg3NCwibmJmIjoxNzA0NDUwODc0LCJqdGkiOiJtb05KQXV3bHZHaVJzYzJkIiwic3ViIjoiMjEiLCJwcnYiOiJjODliMGU1MDEzNTM2YjQwNDkwNGZiYjMzN2ZlYzI4YjE0NDgyYjdmIn0.d6AahqEerCmQo_Ki9DRfAx8wxPP0Wn18byj5GPyGtR4",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "mutation createPosCustomer (\n    $input: createCustomerInput!\n) {\n    createPosCustomer (\n        input: $input\n    ) {\n        success\n        errors\n        message\n        customer {\n            id\n            firstName\n            lastName\n            name\n            gender\n            dateOfBirth\n            email\n            phone\n            image\n            imageUrl\n            status\n            channelId\n            isVerified\n            isSuspended\n            createdAt\n            updatedAt\n            addresses {\n                id\n                addressType\n                address\n                city\n                state\n                country\n                postcode\n                createdAt\n                updatedAt\n            }\n        }\n    }\n}",
+														"variables": "{\n    \"input\" : {\n        \"firstName\": \"Customer\",\n        \"lastName\": \"1\",\n        \"email\": \"customer@gmail.com\",\n        \"phone\": \"7412589632\",\n        \"address\": [\"New Delhi\"],\n        \"city\": \"muzaffarpur\",\n        \"country\": \"IN\",\n        \"state\": \"BR\",\n        \"postcode\": \"876543\"\n    }\n}"
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Update",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4xNS4yMDQvQmFnaXN0bzIuMC9sb2NhbC9oZWFkbGVzc18yLjAvcHVibGljL2dyYXBocWwiLCJpYXQiOjE3MDQ0NTA4NzQsImV4cCI6MTczNTk4Njg3NCwibmJmIjoxNzA0NDUwODc0LCJqdGkiOiJtb05KQXV3bHZHaVJzYzJkIiwic3ViIjoiMjEiLCJwcnYiOiJjODliMGU1MDEzNTM2YjQwNDkwNGZiYjMzN2ZlYzI4YjE0NDgyYjdmIn0.d6AahqEerCmQo_Ki9DRfAx8wxPP0Wn18byj5GPyGtR4",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "mutation updatePosCustomer (\n    $input: updateCustomerInput!\n) {\n    updatePosCustomer (\n        input: $input\n    ) {\n        success\n        errors\n        message\n        customer {\n            id\n            firstName\n            lastName\n            name\n            gender\n            dateOfBirth\n            email\n            phone\n            image\n            imageUrl\n            status\n            channelId\n            isVerified\n            isSuspended\n            createdAt\n            updatedAt\n            addresses {\n                id\n                addressType\n                address\n                city\n                state\n                country\n                postcode\n                createdAt\n                updatedAt\n            }\n        }\n    }\n}",
+														"variables": "{\n    \"input\" : {\n        \"id\": 24,\n        \"firstName\": \"Customer\",\n        \"lastName\": \"Singh\",\n        \"email\": \"customer@gmail.com\",\n        \"phone\": \"7412589632\",\n        \"address\": [\"New Delhi\"],\n        \"city\": \"muzaffarpur\",\n        \"country\": \"IN\",\n        \"state\": \"DL\",\n        \"postcode\": \"876543\"\n    }\n}"
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Delete",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "mutation deletePosCustomer ($id: ID!) {\n    deletePosCustomer(id: $id) {\n        success\n        message\n    }\n}",
+														"variables": "{\n    \"id\": 17\n}"
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Main",
+									"item": [
+										{
+											"name": "Products",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "query getOutletProducts {\n    getOutletProducts (\n        page: 1\n        first: 10\n    ) {\n        paginatorInfo {\n            count\n            currentPage\n            lastPage\n            total\n        }\n        data {\n            id\n            sku\n            type\n            name\n            quantity\n            price\n            barcode\n            priceHtml\n            images {\n                id\n                url\n            }\n            categories {\n                id\n                name\n                parentId\n                children {\n                    id\n                    name\n                    parentId\n                }\n            }\n            variantConfigurations\n            downloadableSamples {\n                id\n                url\n                file\n                fileName\n                fileUrl\n                type\n                sortOrder\n                productId\n                createdAt\n                updatedAt\n                translations {\n                    id\n                    locale\n                    title\n                    productDownloadableSampleId\n                }\n            }\n            downloadableLinks {\n                id\n                title\n                price\n                url\n                file\n                fileUrl\n                fileName\n                type\n                sampleUrl\n                sampleFile\n                sampleFileName\n                sampleFileUrl\n                sampleType\n                sortOrder\n                productId\n                downloads\n                translations {\n                    id\n                    locale\n                    title\n                    productDownloadableLinkId\n                }\n            }\n            groupedProducts {\n                id\n                qty\n                sortOrder\n                productId\n                associatedProductId\n                associatedProduct {\n                    id\n                    type\n                    name\n                    attributeFamilyId\n                    sku\n                    parentId\n                    isSaleable\n                    priceHtml {\n                        minPrice\n                        priceHtml\n                    }\n                }\n            }\n            options {\n                id\n                label\n                type\n                isRequired\n                sortOrder\n                products {\n                    id\n                    qty\n                    name\n                    productId\n                    isDefault\n                    sortOrder\n                    inStock\n                    inventory\n                    price {\n                        regular {\n                            price\n                            formattedPrice\n                        }\n                        final {\n                            price\n                            formattedPrice\n                        }\n                    }\n                }\n            }\n        }\n    }\n}",
+														"variables": ""
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Categories",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "query getOutletCategories {\n    getOutletCategories (\n        page: 1\n        first: 10\n    ) {\n        paginatorInfo {\n            count\n            currentPage\n            lastPage\n            total\n        }\n        data {\n            id\n            slug\n            name\n            parentId\n            children {\n                id\n                slug\n                name\n                parentId\n                children {\n                    id\n                    slug\n                    name\n                    parentId\n                }\n            }\n        }\n    }\n}",
+														"variables": ""
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Customers",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "query getCustomers {\n    getCustomers(\n        page: 1\n        first: 10\n    ) {\n        paginatorInfo {\n            count\n            currentPage\n            lastPage\n            total\n        }\n        data {\n            id\n            firstName\n            lastName\n            name\n            gender\n            dateOfBirth\n            email\n            phone\n            image\n            imageUrl\n            status\n            channelId\n            isVerified\n            isSuspended\n            createdAt\n            updatedAt\n            addresses {\n                id\n                addressType\n                address\n                city\n                state\n                country\n                postcode\n                createdAt\n                updatedAt\n            }\n        }\n    }\n}",
+														"variables": "{\n    \"query\": \"maya\"\n}"
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Orders",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "query getOrders {\n    getOrders(\n        page: 1\n        first: 10\n    ) {\n        paginatorInfo {\n            count\n            currentPage\n            lastPage\n            total\n        }\n        data {\n            outlet {\n                name\n                agent {\n                    email\n                    firstName\n                    lastName\n                }\n            }\n            customerCredit {\n                changeAmount\n                tenderedAmount\n            }\n            order {\n                id\n                customerFirstName\n                customerLastName\n                customerEmail\n                totalQtyOrdered\n                discountAmount\n                taxAmount\n                subTotal\n                grandTotal\n                createdAt\n                customer {\n                    name\n                    phone\n                }\n                formattedPrice {\n                    discountAmount\n                    taxAmount\n                    subTotal\n                    grandTotal\n                }\n                items {\n                    sku\n                    name\n                    qtyOrdered\n                    price\n                    baseTotal\n                    additional\n                    formattedPrice {\n                        price\n                        baseTotal\n                    }\n                }\n            }\n        }\n    }\n}",
+														"variables": "{\n    \"query\": \"may\"\n}"
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Cart",
+									"item": [
+										{
+											"name": "Get Cart",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "mutation getCart($customerId: ID!) {\n    getCart(customerId: $customerId) {\n        id\n        customerEmail\n        customerFirstName\n        customerLastName\n        couponCode\n        itemsCount\n        itemsQty\n        grandTotal\n        baseGrandTotal\n        subTotal\n        baseSubTotal\n        taxTotal\n        baseTaxTotal\n        discountAmount\n        baseDiscountAmount\n        isActive\n        appliedCartRuleIds\n        customerId\n        createdAt\n        updatedAt\n        formattedPrice {\n            grandTotal\n            baseGrandTotal\n            subTotal\n            baseSubTotal\n            taxTotal\n            baseTaxTotal\n            discount\n            baseDiscount\n            discountedSubTotal\n            baseDiscountedSubTotal\n        }\n        items {\n            id\n            quantity\n            sku\n            type\n            name\n            couponCode\n            price\n            basePrice\n            customPrice\n            total\n            baseTotal\n            taxPercent\n            taxAmount\n            baseTaxAmount\n            discountPercent\n            discountAmount\n            baseDiscountAmount\n            parentId\n            productId\n            cartId\n            taxCategoryId\n            appliedCartRuleIds\n            createdAt\n            updatedAt\n            formattedPrice {\n                price\n                basePrice\n                customPrice\n                total\n                baseTotal\n                taxAmount\n                baseTaxAmount\n                discountAmount\n                baseDiscountAmount\n            }\n        }\n    }\n}\n",
+														"variables": "{\n    \"customerId\": 8\n}"
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Add To cart",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4xNS4yMDQvQmFnaXN0bzIuMC9sb2NhbC9oZWFkbGVzc18yLjAvcHVibGljL2dyYXBocWwiLCJpYXQiOjE3MDQ0NTA4NzQsImV4cCI6MTczNTk4Njg3NCwibmJmIjoxNzA0NDUwODc0LCJqdGkiOiJtb05KQXV3bHZHaVJzYzJkIiwic3ViIjoiMjEiLCJwcnYiOiJjODliMGU1MDEzNTM2YjQwNDkwNGZiYjMzN2ZlYzI4YjE0NDgyYjdmIn0.d6AahqEerCmQo_Ki9DRfAx8wxPP0Wn18byj5GPyGtR4",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "mutation addToCart (\n    $input: createCartInput!\n) {\n    addToCart (\n        input: $input\n    ) {\n        success\n        message\n        cart {\n            id\n            customerEmail\n            customerFirstName\n            customerLastName\n            couponCode\n            itemsCount\n            itemsQty\n            grandTotal\n            baseGrandTotal\n            subTotal\n            baseSubTotal\n            taxTotal\n            baseTaxTotal\n            discountAmount\n            baseDiscountAmount\n            isActive\n            appliedCartRuleIds\n            customerId\n            createdAt\n            updatedAt\n            formattedPrice {\n                grandTotal\n                baseGrandTotal\n                subTotal\n                baseSubTotal\n                taxTotal\n                baseTaxTotal\n                discount\n                baseDiscount\n                discountedSubTotal\n                baseDiscountedSubTotal\n            }\n            items {\n                id\n                quantity\n                sku\n                type\n                name\n                couponCode\n                price\n                basePrice\n                customPrice\n                total\n                baseTotal\n                taxPercent\n                taxAmount\n                baseTaxAmount\n                discountPercent\n                discountAmount\n                baseDiscountAmount\n                parentId\n                productId\n                cartId\n                taxCategoryId\n                appliedCartRuleIds\n                createdAt\n                updatedAt\n                formattedPrice {\n                    price\n                    basePrice\n                    customPrice\n                    total\n                    baseTotal\n                    taxAmount\n                    baseTaxAmount\n                    discountAmount\n                    baseDiscountAmount\n                }\n            }\n        }\n    }\n}",
+														"variables": "{\n    \"input\" : {\n        \"productId\": 2,\n        \"quantity\": 1,\n        \"customerId\": 8\n    }\n}"
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Update Cart Item",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4xNS4yMDQvQmFnaXN0bzIuMC9sb2NhbC9oZWFkbGVzc18yLjAvcHVibGljL2dyYXBocWwiLCJpYXQiOjE3MDQ0NTA4NzQsImV4cCI6MTczNTk4Njg3NCwibmJmIjoxNzA0NDUwODc0LCJqdGkiOiJtb05KQXV3bHZHaVJzYzJkIiwic3ViIjoiMjEiLCJwcnYiOiJjODliMGU1MDEzNTM2YjQwNDkwNGZiYjMzN2ZlYzI4YjE0NDgyYjdmIn0.d6AahqEerCmQo_Ki9DRfAx8wxPP0Wn18byj5GPyGtR4",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "mutation updateCartItem (\n    $input: updateCartItemInput!\n) {\n    updateCartItem (\n        input: $input\n    ) {\n        success\n        message\n        cart {\n            id\n            customerEmail\n            customerFirstName\n            customerLastName\n            couponCode\n            itemsCount\n            itemsQty\n            grandTotal\n            baseGrandTotal\n            subTotal\n            baseSubTotal\n            taxTotal\n            baseTaxTotal\n            discountAmount\n            baseDiscountAmount\n            isActive\n            appliedCartRuleIds\n            customerId\n            createdAt\n            updatedAt\n            formattedPrice {\n                grandTotal\n                baseGrandTotal\n                subTotal\n                baseSubTotal\n                taxTotal\n                baseTaxTotal\n                discount\n                baseDiscount\n                discountedSubTotal\n                baseDiscountedSubTotal\n            }\n            items {\n                id\n                quantity\n                sku\n                type\n                name\n                couponCode\n                price\n                basePrice\n                customPrice\n                total\n                baseTotal\n                taxPercent\n                taxAmount\n                baseTaxAmount\n                discountPercent\n                discountAmount\n                baseDiscountAmount\n                parentId\n                productId\n                cartId\n                taxCategoryId\n                appliedCartRuleIds\n                createdAt\n                updatedAt\n                product {\n                    priceHtml {\n                        minPrice\n                        finalPrice\n                    }\n                }\n                formattedPrice {\n                    price\n                    basePrice\n                    customPrice\n                    total\n                    baseTotal\n                    taxAmount\n                    baseTaxAmount\n                    discountAmount\n                    baseDiscountAmount\n                }\n            }\n        }\n    }\n}",
+														"variables": "{\n    \"input\": {\n        \"customerId\": 8,\n        \"qty\": [\n            {\n                \"cartItemId\": 210,\n                \"customPrice\": 180,\n                \"quantity\": 1\n            }\n        ]\n    }\n}"
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Delete Cart Item",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4xNS4yMDQvQmFnaXN0bzIuMC9sb2NhbC9oZWFkbGVzc18yLjAvcHVibGljL2dyYXBocWwiLCJpYXQiOjE3MDQ0NTA4NzQsImV4cCI6MTczNTk4Njg3NCwibmJmIjoxNzA0NDUwODc0LCJqdGkiOiJtb05KQXV3bHZHaVJzYzJkIiwic3ViIjoiMjEiLCJwcnYiOiJjODliMGU1MDEzNTM2YjQwNDkwNGZiYjMzN2ZlYzI4YjE0NDgyYjdmIn0.d6AahqEerCmQo_Ki9DRfAx8wxPP0Wn18byj5GPyGtR4",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "mutation deleteCartItem (\n    $input: deleteCartItemInput!\n) {\n    deleteCartItem (\n        input: $input\n    ) {\n        success\n        message\n        cart {\n            id\n            customerEmail\n            customerFirstName\n            customerLastName\n            shippingMethod\n            couponCode\n            isGift\n            itemsCount\n            itemsQty\n            exchangeRate\n            globalCurrencyCode\n            baseCurrencyCode\n            channelCurrencyCode\n            cartCurrencyCode\n            grandTotal\n            baseGrandTotal\n            subTotal\n            baseSubTotal\n            taxTotal\n            baseTaxTotal\n            discountAmount\n            baseDiscountAmount\n            checkoutMethod\n            isGuest\n            isActive\n            appliedCartRuleIds\n            customerId\n            channelId\n            createdAt\n            updatedAt\n            formattedPrice {\n                grandTotal\n                baseGrandTotal\n                subTotal\n                baseSubTotal\n                taxTotal\n                baseTaxTotal\n                discount\n                baseDiscount\n                discountedSubTotal\n                baseDiscountedSubTotal\n            }\n            items {\n                id\n                quantity\n                sku\n                type\n                name\n                couponCode\n                weight\n                totalWeight\n                baseTotalWeight\n                price\n                basePrice\n                customPrice\n                total\n                baseTotal\n                taxPercent\n                taxAmount\n                baseTaxAmount\n                discountPercent\n                discountAmount\n                baseDiscountAmount\n                parentId\n                productId\n                cartId\n                taxCategoryId\n                appliedCartRuleIds\n                #additional\n                createdAt\n                updatedAt\n                formattedPrice {\n                    price\n                    basePrice\n                    customPrice\n                    total\n                    baseTotal\n                    taxAmount\n                    baseTaxAmount\n                    discountAmount\n                    baseDiscountAmount\n                }\n                #product\n                cart {\n                    id\n                }\n                child {\n                    id\n                }\n                parent {\n                    id\n                }\n            }\n            allItems  {\n                id\n                quantity\n                sku\n                type\n                name\n                couponCode\n                weight\n                totalWeight\n                baseTotalWeight\n                price\n                basePrice\n                customPrice\n                total\n                baseTotal\n                taxPercent\n                taxAmount\n                baseTaxAmount\n                discountPercent\n                discountAmount\n                baseDiscountAmount\n                parentId\n                productId\n                cartId\n                taxCategoryId\n                appliedCartRuleIds\n                #additional\n                createdAt\n                updatedAt\n                formattedPrice {\n                    price\n                    basePrice\n                    customPrice\n                    total\n                    baseTotal\n                    taxAmount\n                    baseTaxAmount\n                    discountAmount\n                    baseDiscountAmount\n                }\n                #product\n                cart {\n                    id\n                }\n                child {\n                    id\n                }\n                parent {\n                    id\n                }\n            }\n            billingAddress {\n                id\n            }\n            shippingAddress {\n                id\n            }\n            #shippingRates\n            selectedShippingRate {\n                id\n                carrier\n                carrierTitle\n                method\n                methodTitle\n                methodDescription\n                price\n                basePrice\n                discountAmount\n                baseDiscountAmount\n                isCalculateTax\n                cartAddressId\n                createdAt\n                updatedAt\n                shippingAddress {\n                    id\n                }\n                formattedPrice { \n                    price\n                    basePrice\n                }\n            }\n            payment {\n                id\n                method\n                methodTitle\n                cartId\n                createdAt\n                updatedAt\n            }\n        }\n    }\n}",
+														"variables": "{\n    \"input\": {\n        \"cartItemId\": 210,\n        \"customerId\": 8\n    }\n}"
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Apply Coupon",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4xNS4yMDQvQmFnaXN0bzIuMC9sb2NhbC9oZWFkbGVzc18yLjAvcHVibGljL2dyYXBocWwiLCJpYXQiOjE3MDQ0NTA4NzQsImV4cCI6MTczNTk4Njg3NCwibmJmIjoxNzA0NDUwODc0LCJqdGkiOiJtb05KQXV3bHZHaVJzYzJkIiwic3ViIjoiMjEiLCJwcnYiOiJjODliMGU1MDEzNTM2YjQwNDkwNGZiYjMzN2ZlYzI4YjE0NDgyYjdmIn0.d6AahqEerCmQo_Ki9DRfAx8wxPP0Wn18byj5GPyGtR4",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "mutation applyCartCoupon (\n    $input: applyCouponInput!\n) {\n    applyCartCoupon (\n        input: $input\n    ) {\n        success\n        message\n        cart {\n            id\n            customerEmail\n            customerFirstName\n            customerLastName\n            shippingMethod\n            couponCode\n            isGift\n            itemsCount\n            itemsQty\n            exchangeRate\n            globalCurrencyCode\n            baseCurrencyCode\n            channelCurrencyCode\n            cartCurrencyCode\n            grandTotal\n            baseGrandTotal\n            subTotal\n            baseSubTotal\n            taxTotal\n            baseTaxTotal\n            discountAmount\n            baseDiscountAmount\n            checkoutMethod\n            isGuest\n            isActive\n            appliedCartRuleIds\n            customerId\n            channelId\n            createdAt\n            updatedAt\n            formattedPrice {\n                grandTotal\n                baseGrandTotal\n                subTotal\n                baseSubTotal\n                taxTotal\n                baseTaxTotal\n                discount\n                baseDiscount\n                discountedSubTotal\n                baseDiscountedSubTotal\n            }\n            items {\n                id\n                quantity\n                sku\n                type\n                name\n                couponCode\n                weight\n                totalWeight\n                baseTotalWeight\n                price\n                basePrice\n                customPrice\n                total\n                baseTotal\n                taxPercent\n                taxAmount\n                baseTaxAmount\n                discountPercent\n                discountAmount\n                baseDiscountAmount\n                parentId\n                productId\n                cartId\n                taxCategoryId\n                appliedCartRuleIds\n                #additional\n                createdAt\n                updatedAt\n                formattedPrice {\n                    price\n                    basePrice\n                    customPrice\n                    total\n                    baseTotal\n                    taxAmount\n                    baseTaxAmount\n                    discountAmount\n                    baseDiscountAmount\n                }\n                #product\n                cart {\n                    id\n                }\n                child {\n                    id\n                }\n                parent {\n                    id\n                }\n            }\n            allItems  {\n                id\n                quantity\n                sku\n                type\n                name\n                couponCode\n                weight\n                totalWeight\n                baseTotalWeight\n                price\n                basePrice\n                customPrice\n                total\n                baseTotal\n                taxPercent\n                taxAmount\n                baseTaxAmount\n                discountPercent\n                discountAmount\n                baseDiscountAmount\n                parentId\n                productId\n                cartId\n                taxCategoryId\n                appliedCartRuleIds\n                #additional\n                createdAt\n                updatedAt\n                formattedPrice {\n                    price\n                    basePrice\n                    customPrice\n                    total\n                    baseTotal\n                    taxAmount\n                    baseTaxAmount\n                    discountAmount\n                    baseDiscountAmount\n                }\n                #product\n                cart {\n                    id\n                }\n                child {\n                    id\n                }\n                parent {\n                    id\n                }\n            }\n            billingAddress {\n                id\n            }\n            shippingAddress {\n                id\n            }\n            #shippingRates\n            selectedShippingRate {\n                id\n                carrier\n                carrierTitle\n                method\n                methodTitle\n                methodDescription\n                price\n                basePrice\n                discountAmount\n                baseDiscountAmount\n                isCalculateTax\n                cartAddressId\n                createdAt\n                updatedAt\n                shippingAddress {\n                    id\n                }\n                formattedPrice { \n                    price\n                    basePrice\n                }\n            }\n            payment {\n                id\n                method\n                methodTitle\n                cartId\n                createdAt\n                updatedAt\n            }\n        }\n    }\n}",
+														"variables": "{\n    \"input\": {\n        \"code\": \"28\",\n        \"customerId\": 10\n    }\n}"
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Remove Coupon",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4xNS4yMDQvQmFnaXN0bzIuMC9sb2NhbC9oZWFkbGVzc18yLjAvcHVibGljL2dyYXBocWwiLCJpYXQiOjE3MDQ0NTA4NzQsImV4cCI6MTczNTk4Njg3NCwibmJmIjoxNzA0NDUwODc0LCJqdGkiOiJtb05KQXV3bHZHaVJzYzJkIiwic3ViIjoiMjEiLCJwcnYiOiJjODliMGU1MDEzNTM2YjQwNDkwNGZiYjMzN2ZlYzI4YjE0NDgyYjdmIn0.d6AahqEerCmQo_Ki9DRfAx8wxPP0Wn18byj5GPyGtR4",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "mutation removeCartCoupon($customerId: ID!) {\n    removeCartCoupon(customerId: $customerId) {\n        success\n        message\n        cart {\n            id\n            customerEmail\n            customerFirstName\n            customerLastName\n            shippingMethod\n            couponCode\n            isGift\n            itemsCount\n            itemsQty\n            exchangeRate\n            globalCurrencyCode\n            baseCurrencyCode\n            channelCurrencyCode\n            cartCurrencyCode\n            grandTotal\n            baseGrandTotal\n            subTotal\n            baseSubTotal\n            taxTotal\n            baseTaxTotal\n            discountAmount\n            baseDiscountAmount\n            checkoutMethod\n            isGuest\n            isActive\n            appliedCartRuleIds\n            customerId\n            channelId\n            createdAt\n            updatedAt\n            formattedPrice {\n                grandTotal\n                baseGrandTotal\n                subTotal\n                baseSubTotal\n                taxTotal\n                baseTaxTotal\n                discount\n                baseDiscount\n                discountedSubTotal\n                baseDiscountedSubTotal\n            }\n            items {\n                id\n                quantity\n                sku\n                type\n                name\n                couponCode\n                weight\n                totalWeight\n                baseTotalWeight\n                price\n                basePrice\n                customPrice\n                total\n                baseTotal\n                taxPercent\n                taxAmount\n                baseTaxAmount\n                discountPercent\n                discountAmount\n                baseDiscountAmount\n                parentId\n                productId\n                cartId\n                taxCategoryId\n                appliedCartRuleIds\n                #additional\n                createdAt\n                updatedAt\n                formattedPrice {\n                    price\n                    basePrice\n                    customPrice\n                    total\n                    baseTotal\n                    taxAmount\n                    baseTaxAmount\n                    discountAmount\n                    baseDiscountAmount\n                }\n                #product\n                cart {\n                    id\n                }\n                child {\n                    id\n                }\n                parent {\n                    id\n                }\n            }\n            allItems  {\n                id\n                quantity\n                sku\n                type\n                name\n                couponCode\n                weight\n                totalWeight\n                baseTotalWeight\n                price\n                basePrice\n                customPrice\n                total\n                baseTotal\n                taxPercent\n                taxAmount\n                baseTaxAmount\n                discountPercent\n                discountAmount\n                baseDiscountAmount\n                parentId\n                productId\n                cartId\n                taxCategoryId\n                appliedCartRuleIds\n                #additional\n                createdAt\n                updatedAt\n                formattedPrice {\n                    price\n                    basePrice\n                    customPrice\n                    total\n                    baseTotal\n                    taxAmount\n                    baseTaxAmount\n                    discountAmount\n                    baseDiscountAmount\n                }\n                #product\n                cart {\n                    id\n                }\n                child {\n                    id\n                }\n                parent {\n                    id\n                }\n            }\n            billingAddress {\n                id\n            }\n            shippingAddress {\n                id\n            }\n            #shippingRates\n            selectedShippingRate {\n                id\n                carrier\n                carrierTitle\n                method\n                methodTitle\n                methodDescription\n                price\n                basePrice\n                discountAmount\n                baseDiscountAmount\n                isCalculateTax\n                cartAddressId\n                createdAt\n                updatedAt\n                shippingAddress {\n                    id\n                }\n                formattedPrice { \n                    price\n                    basePrice\n                }\n            }\n            payment {\n                id\n                method\n                methodTitle\n                cartId\n                createdAt\n                updatedAt\n            }\n        }\n    }\n}",
+														"variables": "{\n    \"customerId\": 10\n}"
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Payment",
+									"item": [
+										{
+											"name": "Confirm Payment",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4xNS4yMDQvQmFnaXN0bzIuMC9sb2NhbC9oZWFkbGVzc18yLjAvcHVibGljL2dyYXBocWwiLCJpYXQiOjE3MDQ0NTA4NzQsImV4cCI6MTczNTk4Njg3NCwibmJmIjoxNzA0NDUwODc0LCJqdGkiOiJtb05KQXV3bHZHaVJzYzJkIiwic3ViIjoiMjEiLCJwcnYiOiJjODliMGU1MDEzNTM2YjQwNDkwNGZiYjMzN2ZlYzI4YjE0NDgyYjdmIn0.d6AahqEerCmQo_Ki9DRfAx8wxPP0Wn18byj5GPyGtR4",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "mutation confirmPayment (\n    $input: confirmPaymentInput!\n) {\n    confirmPayment (\n        input: $input\n    ) {\n        success\n        message\n        posOrder {\n            id\n            orderId\n            orderRefId\n            outletId\n            userId\n            orderNote\n            discountAmount\n            baseDiscountAmount\n            orderCurrency\n            orderBarcodePath\n            bankName\n            cardDetails\n            cardTotal\n            cashTotal\n            createdAt\n            updatedAt\n            order {\n                id\n                customerEmail\n                customerFirstName\n                customerLastName\n                shippingMethod\n                shippingTitle\n                totalItemCount\n                totalQtyOrdered\n                grandTotal\n                baseGrandTotal\n                taxAmount\n                baseTaxAmount\n                items {\n                    id\n                    name\n                    sku\n                    qtyOrdered\n                    price\n                    basePrice\n                    total\n                    baseTotal\n                }\n            }\n        }\n        customerCredit {\n            id\n            orderId\n            customerId\n            changeAmount\n            baseChangeAmount\n            tenderedAmount\n            baseTenderedAmount\n            paymentMode\n            usedStatus\n            createdAt\n            updatedAt\n        }\n    }\n}",
+														"variables": "{\n    \"input\": {\n        \"customerId\": 8,\n        \"cashTotal\": 300,\n        \"paymentMode\": \"pos_split\",\n        \"bankName\": \"SBI\",\n        \"cardDetails\": \"1122\",\n        \"orderNote\": \"This Is Note\"\n    }\n}"
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Cashier",
+									"item": [
+										{
+											"name": "Get Drawer",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "query getDrawerDetails {\n    getDrawerDetails {\n        openingAmount\n        cashPaymentSale\n        otherPaymentSale\n        expectedDrawerAmount\n        differenceAmount\n        remark\n    }\n}",
+														"variables": ""
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Open",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4xNS4yMDQvQmFnaXN0bzIuMC9sb2NhbC9oZWFkbGVzc18yLjAvcHVibGljL2dyYXBocWwiLCJpYXQiOjE3MDQ0NTA4NzQsImV4cCI6MTczNTk4Njg3NCwibmJmIjoxNzA0NDUwODc0LCJqdGkiOiJtb05KQXV3bHZHaVJzYzJkIiwic3ViIjoiMjEiLCJwcnYiOiJjODliMGU1MDEzNTM2YjQwNDkwNGZiYjMzN2ZlYzI4YjE0NDgyYjdmIn0.d6AahqEerCmQo_Ki9DRfAx8wxPP0Wn18byj5GPyGtR4",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "mutation openDrawer (\n    $input: drawerInput!\n) {\n    openDrawer (\n        input: $input\n    ) {\n        success\n        errors\n        message\n    }\n}",
+														"variables": "{\n    \"input\": {\n        \"openingAmount\": 10,\n        \"remark\": \"remark\"\n    }\n}"
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Close",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4xNS4yMDQvQmFnaXN0bzIuMC9sb2NhbC9oZWFkbGVzc18yLjAvcHVibGljL2dyYXBocWwiLCJpYXQiOjE3MDQ0NTA4NzQsImV4cCI6MTczNTk4Njg3NCwibmJmIjoxNzA0NDUwODc0LCJqdGkiOiJtb05KQXV3bHZHaVJzYzJkIiwic3ViIjoiMjEiLCJwcnYiOiJjODliMGU1MDEzNTM2YjQwNDkwNGZiYjMzN2ZlYzI4YjE0NDgyYjdmIn0.d6AahqEerCmQo_Ki9DRfAx8wxPP0Wn18byj5GPyGtR4",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "mutation closeDrawer (\n    $input: drawerInput!\n) {\n    closeDrawer (\n        input: $input\n    ) {\n        success\n        errors\n        message\n    }\n}",
+														"variables": "{\n    \"input\": {\n        \"openingAmount\": 110,\n        \"remark\": \"remark\"\n    }\n}"
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Today Sale",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "query getTodaySales {\n    getTodaySales (\n        orderId: 22\n        time: \"2024-07-30 09:38:00\"\n        orderTotal: 200\n        paymentMode: \"pos_cash\"\n    ) {\n        openingAmount\n        cashPaymentSale\n        otherPaymentSale\n        orders {\n            orderId\n            orderTotal\n            paymentMode\n            createdAt\n        }\n    }\n}",
+														"variables": ""
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Sale History",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "query getSaleHistory {\n    getSaleHistory (\n        date: \"\"\n        cashPayment: 0\n        otherPayment: 0\n        totalSale: 0\n    ) {\n        createdAt\n        cashPayment\n        otherPayment\n        totalSale\n        drawerNote\n    }\n}",
+														"variables": ""
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Report",
+									"item": [
+										{
+											"name": "Get Report",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "query getSaleReport (\n    $startDate: String\n    $endDate: String\n) {\n    getSaleReport (\n        startDate: $startDate\n        endDate: $endDate\n    ) {\n        reports {\n            ordersCount {\n                name\n                total\n                progress\n                goingUp\n                series {\n                    name\n                    data\n                }\n                labels\n            }\n            avgOrderValue {\n                name\n                total\n                progress\n                goingUp\n                series {\n                    name\n                    data\n                }\n                labels\n            }\n            avgItemsPerOrder {\n                name\n                total\n                progress\n                goingUp\n                series {\n                    name\n                    data\n                }\n                labels\n            }\n            discountOffers {\n                name\n                total\n                progress\n                goingUp\n                series {\n                    name\n                    data\n                }\n                labels\n            }\n            cashPayments {\n                name\n                total\n                progress\n                goingUp\n                series {\n                    name\n                    data\n                }\n                labels\n            }\n            otherPayments {\n                name\n                total\n                progress\n                goingUp\n                series {\n                    name\n                    data\n                }\n                labels\n            }\n        }\n    }\n}",
+														"variables": "{\n    \"startDate\": \"2024-07-30\",\n    \"endDate\": \"2024-08-06\"\n}"
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Products",
+									"item": [
+										{
+											"name": "Get Low Stock",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "mutation getLowStockProducts (\n    $minQty: Int!\n) {\n    getLowStockProducts (\n        minQty: $minQty\n    ) {\n        id\n        sku\n        type\n        name\n        quantity\n        price\n        priceHtml\n        images {\n            id\n            url\n        }\n    }\n}",
+														"variables": "{\n    \"minQty\": 100\n}"
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Request Quantity",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4xNS4yMDQvQmFnaXN0bzIuMC9sb2NhbC9oZWFkbGVzc18yLjAvcHVibGljL2dyYXBocWwiLCJpYXQiOjE3MDQ0NTA4NzQsImV4cCI6MTczNTk4Njg3NCwibmJmIjoxNzA0NDUwODc0LCJqdGkiOiJtb05KQXV3bHZHaVJzYzJkIiwic3ViIjoiMjEiLCJwcnYiOiJjODliMGU1MDEzNTM2YjQwNDkwNGZiYjMzN2ZlYzI4YjE0NDgyYjdmIn0.d6AahqEerCmQo_Ki9DRfAx8wxPP0Wn18byj5GPyGtR4",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "mutation requestProductQty (\n    $input: requestProductQtyInput!\n) {\n    requestProductQty (\n        input: $input\n    ) {\n        success\n        message\n    }\n}",
+														"variables": "{\n    \"input\": {\n        \"products\": [\n            {\n                \"productId\": 1,\n                \"requestedQuantity\": 50,\n                \"comment\": \"Soon\"\n            }\n        ]\n    }\n}"
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Create Product",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4xNS4yMDQvQmFnaXN0bzIuMC9sb2NhbC9oZWFkbGVzc18yLjAvcHVibGljL2dyYXBocWwiLCJpYXQiOjE3MDQ0NTA4NzQsImV4cCI6MTczNTk4Njg3NCwibmJmIjoxNzA0NDUwODc0LCJqdGkiOiJtb05KQXV3bHZHaVJzYzJkIiwic3ViIjoiMjEiLCJwcnYiOiJjODliMGU1MDEzNTM2YjQwNDkwNGZiYjMzN2ZlYzI4YjE0NDgyYjdmIn0.d6AahqEerCmQo_Ki9DRfAx8wxPP0Wn18byj5GPyGtR4",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "mutation createOutletProduct (\n    $input: createOutletProductInput!\n) {\n    createOutletProduct (\n        input: $input\n    ) {\n        success\n        errors\n        message\n    }\n}",
+														"variables": "{\n    \"input\": {\n        \"name\": \"Custom Product\",\n        \"sku\": \"custom\",\n        \"price\": 10,\n        \"quantity\": 16,\n        \"weight\": 100\n    }\n}"
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Get Rquested Products",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "query getRequestedProducts($query: String!) {\n    getRequestedProducts(query: $query) {\n        id\n        name\n        comment\n        requestedQuantity\n        requestStatus\n        requestedDate\n        createdAt\n        updatedAt\n    }\n}",
+														"variables": "{\n    \"query\": \"\"\n}"
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Orders",
+									"item": [
+										{
+											"name": "Sync Offline Order",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{agentToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "mutation syncOrder (\n    $input: syncOrderInput!\n) {\n    syncOrder (\n        input: $input\n    ) {\n        success\n        message\n    }\n}",
+														"variables": "{\n    \"input\": {\n        \"customerId\": 8,\n        \"cashTotal\": 300,\n        \"paymentMode\": \"pos_split\",\n        \"bankName\": \"SBI\",\n        \"cardDetails\": \"1122\",\n        \"orderNote\": \"This Is Note\",\n        \"orderItems\": [\n            {\n                \"productId\": 1,\n                \"qtyOrdered\": 1\n            },\n            {\n                \"productId\": 2,\n                \"qtyOrdered\": 2\n            }\n        ]\n    }\n}"
+													}
+												},
+												"url": {
+													"raw": "{{url}}",
+													"host": [
+														"{{url}}"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

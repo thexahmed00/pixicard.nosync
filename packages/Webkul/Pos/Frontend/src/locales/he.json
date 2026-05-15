@@ -1,0 +1,420 @@
+{
+    "pos": {
+        "title": "Bagisto POS",
+        "page_not_found": {
+            "title": "משהו חסר.",
+            "message": "סליחה, אנחנו לא מצליחים למצוא את הדף הזה. תמצא הרבה מה לחקור בעמוד הבית.",
+            "back_btn_title": "חזרה לדף הבית"
+        },
+        "login_form": {
+            "title": "התחברות",
+            "user_name": "שם משתמש",
+            "user_name_placeholder": "הזן שם משתמש",
+            "password": "סיסמה",
+            "password_placeholder": "הזן סיסמה",
+            "remember_password": "זכור סיסמה",
+            "login_btn_title": "התחברות"
+        },
+        "footer": {
+            "warning": "Webkul אינה מאשרת לסוחרים צד שלישיים למכור מודולים של Webkul מחדש.",
+            "copyright": "כל הזכויות שמורות © 2010-2023, Webkul Software (רשומה בהודו/ארה\"ב)."
+        },
+        "layout": {
+            "header": {
+                "title": "Bagisto POS",
+                "search_products": "חיפוש מוצרים...",
+                "hold_orders": "החזק הזמנות",
+                "barcode_form": {
+                    "title": "הזן ברקוד",
+                    "barcode_placeholder": "הזן את ברקוד המוצר",
+                    "cancel_btn_title": "ביטול",
+                    "proceed_btn_title": "המשך"
+                },
+                "product_create_form": {
+                    "title": "הוסף מוצר חדש",
+                    "name": "שם",
+                    "sku": "SKU",
+                    "price": "מחיר",
+                    "weight": "משקל",
+                    "quantity": "כמות",
+                    "cancel_btn_title": "ביטול",
+                    "proceed_btn_title": "המשך"
+                }
+            },
+            "sidebar": {
+                "home": "דף הבית",
+                "customers": "לקוחות",
+                "cashier": "קופאי",
+                "orders": "הזמנות",
+                "products": "מוצרים",
+                "reports": "דוחות",
+                "settings": "הגדרות",
+                "logout": "התנתקות"
+            },
+            "main": {
+                "progress_modal": {
+                    "title": "סנכרון נתונים",
+                    "description": "אנא המתן בזמן שאנו סונכרנים את הנתונים. זה עשוי לקחת כמה זמן.",
+                    "products": "מוצרים",
+                    "categories": "קטגוריות",
+                    "customers": "לקוחות",
+                    "orders": "הזמנות"
+                },
+                "cash_drawer": {
+                    "title": "מגירת כספים",
+                    "opening_drawer_amount": "סכום פתיחת המגירה",
+                    "remarks": "הערות",
+                    "remarks_placeholder": "הכנס הערות לסגירת הקופה.",
+                    "open_drawer": "פתח מגירה"
+                }
+            }
+        },
+        "common": {
+            "cart": {
+                "add_customer": "הוסף לקוח",
+                "add": "הוסף",
+                "quantity": "כמות",
+                "discount": "הנחה",
+                "coupon_code": "קוד קופון",
+                "note": "הערה",
+                "subtotal": "סכום חלקי",
+                "tax": "מס",
+                "payable_amount": "סכום לתשלום",
+                "hold_order": "החזק הזמנה",
+                "hold_order_success": "ההזמנה הוחזקה בהצלחה.",
+                "create_success": "העגלה נוצרה בהצלחה.",
+                "update_success": "העגלה עודכנה בהצלחה.",
+                "remove_success": "העגלה הוסרה בהצלחה.",
+                "product_add_success": "המוצר נוסף לעגלה בהצלחה!",
+                "product_remove_success": "המוצר הוסר מהעגלה בהצלחה!",
+                "no_cart_selected": "לא נבחרה עגלה.",
+                "no_customer_selected": "לא נבחר לקוח.",
+                "customer_exists": "כבר קיימת עגלה ללקוח שנבחר.",
+                "proceed": "המשך",
+                "coupon_form": {
+                    "title": "קוד קופון",
+                    "cancel_btn_title": "ביטול",
+                    "proceed_btn_title": "המשך"
+                },
+                "order_note_form": {
+                    "title": "הערת הזמנה",
+                    "note_placeholder": "הזן הערת הזמנה",
+                    "cancel_btn_title": "ביטול",
+                    "proceed_btn_title": "המשך",
+                    "create_success": "הערת הזמנה נוספה בהצלחה.",
+                    "remove_success": "הערת הזמנה הוסרה בהצלחה."
+                }
+            },
+            "flash_messages": {
+                "close": "סגור",
+                "error_message": "משהו השתבש! אנא נסה שוב.",
+                "offline_error": "אזהרה, אתה במצב לא מקוון"
+            },
+            "confirm_modal": {
+                "title": "האם אתה בטוח?",
+                "description": "האם אתה בטוח שאתה רוצה לבצע את הפעולה הזו?",
+                "disagree_btn_title": "לא מסכים",
+                "agree_btn_title": "מסכים"
+            }
+        },
+        "home": {
+            "title": "בית",
+            "print_confirmation_title": "אישור הדפסה?",
+            "print_confirm_message": "האם ברצונך להדפיס את הקבלה של ההזמנה האחרונה?",
+            "items_in_cart": "{count} פריטים בעגלה.",  
+            "view_cart_btn": "צפה בעגלה",
+            "categories": {
+                "all": "הכל"
+            },
+            "product": {
+                "view": {
+                    "qty": "{qty} כמות",
+                    "add_to_cart": "הוסף לסל",
+                    "type": {
+                        "bundle": {
+                            "total_amount": "סכום כולל",
+                            "none": "אין אפשרויות חבילה זמינות"
+                        },
+                        "configurable": {
+                            "select_option": "בחר אפשרויות",
+                            "select_above_option": "אנא בחר קודם את האפשרויות למעלה.",
+                            "price": "מחיר הגרסה שנבחרה"
+                        },
+                        "downloadable": {
+                            "samples": "דגימות",
+                            "links": "קישורים"
+                        },
+                        "grouped": {
+                            "name": "שם"
+                        }
+                    }
+                }
+            }
+        },
+        "customers": {
+            "title": "לקוחות",
+            "add_btn_title": "הוסף לקוח חדש",
+            "edit_btn_title": "ערוך",
+            "delete_btn_title": "מחק",
+            "remove_btn_title": "הסר",
+            "search_customers": "חפש לקוחות...",
+            "no_customers_found": "לא נמצאו לקוחות.",
+            "no_current_customer": "לא נבחר לקוח נוכחי.",
+            "current_customer_removed": "הלקוח הוסר בהצלחה.",
+            "current_customer_updated": "הלקוח הנוכחי עודכן בהצלחה.",
+            "customers": "לקוחות",
+            "offline_customers": "לקוחות לא מקוונים",
+            "create": {
+                "title": "הוסף לקוח חדש",
+                "back_btn_title": "חזור",
+                "first_name": "שם פרטי",
+                "last_name": "שם משפחה",
+                "email": "אימייל",
+                "phone_number": "מספר טלפון",
+                "address": "כתובת",
+                "city": "עיר",
+                "state": "מדינה",
+                "select_state": "בחר מדינה",
+                "country": "ארץ",
+                "select_country": "בחר ארץ",
+                "pin_code": "מיקוד",
+                "save_btn_title": "הוסף לקוח",
+                "phone_already_exist": "הטלפון כבר קיים.",
+                "email_already_exist": "האימייל כבר קיים.",
+                "create_success": "הלקוח נוצר בהצלחה."
+            },
+            "edit": {
+                "title": "ערוך לקוח",
+                "back_btn_title": "חזור",
+                "first_name": "שם פרטי",
+                "last_name": "שם משפחה",
+                "email": "אימייל",
+                "phone_number": "מספר טלפון",
+                "address": "כתובת",
+                "city": "עיר",
+                "state": "מדינה",
+                "select_state": "בחר מדינה",
+                "country": "ארץ",
+                "select_country": "בחר ארץ",
+                "pin_code": "מיקוד",
+                "save_btn_title": "עדכן לקוח",
+                "phone_already_exist": "הטלפון כבר קיים.",
+                "email_already_exist": "האימייל כבר קיים.",
+                "update_success": "הלקוח עודכן בהצלחה."
+            }
+        },
+        "cashier": {
+            "title": "קופאי",
+            "cash_drawer": {
+                "title": "מגירת מזומן",
+                "drawer_amount_summary": "סיכום כמות המזומן במגירה",
+                "opening_drawer_amount": "סכום פתיחת המגירה",
+                "cash_payment_sale": "מכירה בתשלום מזומן",
+                "other_payment_sale": "מכירה בתשלום אחר",
+                "expected_drawer_amount": "סכום המזומן הצפוי",
+                "difference": "הפרש",
+                "remarks": "הערות",
+                "remarks_placeholder": "הזן הערות לסגירת המגירה.",
+                "close_drawer": "סגור מגירה"
+            },
+            "today_sale": {
+                "title": "מכירות היום",
+                "opening_drawer_amount": "סכום פתיחת המגירה",
+                "cash_payment_sale": "מכירה בתשלום מזומן",
+                "other_payment_sale": "מכירה בתשלום אחר",
+                "sale_history": "היסטוריית מכירות",
+                "filters": "מסננים",
+                "order_id": "מספר הזמנה",
+                "time": "זמן",
+                "order_total": "סכום הזמנה",
+                "payment_mode": "אמצעי תשלום",
+                "no_records": "לא נמצאו רשומות.",
+                "drawer": {
+                    "title": "פילטר",
+                    "order_id": "מזהה הזמנה",
+                    "time": "זמן",
+                    "order_total": "סך ההזמנה",
+                    "payment_mode": "שיטת תשלום",
+                    "select_payment_mode": "בחר שיטת תשלום",
+                    "pos_cash": "תשלום במזומן",
+                    "pos_card": "תשלום בכרטיס",
+                    "pos_split": "תשלום מחולק",
+                    "filter_btn_title": "החלת פילטר"
+                }
+            },
+            "sale_history": {
+                "title": "היסטוריית מכירות",
+                "filters": "מסננים",
+                "date": "תאריך",
+                "cash_payments": "תשלומים מזומנים",
+                "other_payments": "תשלומים אחרים",
+                "total_sale": "סך המכירות",
+                "drawer_note": "הערת מגירה",
+                "no_records": "לא נמצאו רשומות.",
+                "drawer": {
+                    "title": "פילטר",
+                    "date": "תאריך",
+                    "cash_payment": "תשלום במזומן",
+                    "other_payment": "תשלום אחר",
+                    "total_sale": "סך הכל מכירות",
+                    "filter_btn_title": "החל פילטר"
+                }
+            }
+        },
+        "orders": {
+            "title": "הזמנות",
+            "history": {
+                "title": "היסטוריה",
+                "search_orders": "חיפוש מספר הזמנה או שם לקוח...",
+                "filters": "מסננים",
+                "order_id": "מספר הזמנה",
+                "date": "תאריך",
+                "total_sales": "סך המכירות",
+                "subtotal": "סכום חלקי",
+                "tax": "מס",
+                "no_records": "לא נמצאו רשומות."
+            },
+            "hold": {
+                "title": "הזמנות בהמתנה",
+                "note": "הערה",
+                "resume": "המשך",
+                "remove": "הסר",
+                "remove_success": "ההזמנה הוסרה בהצלחה.",
+                "resume_success": "ההזמנה הוחזרה בהצלחה.",
+                "no_orders": "לא נמצאו הזמנות."
+            },
+            "offline": {
+                "title": "הזמנות לא מקוונות",
+                "sync_order": "סנכרון הזמנה",
+                "sync_all_orders": "סנכרן את כל ההזמנות",
+                "search_order_id": "חיפוש מספר הזמנה...",
+                "order_id": "מספר הזמנה",
+                "date": "תאריך",
+                "no_orders": "לא נמצאו הזמנות לא מקוונות.",
+                "sync_success": "ההזמנה סונכרנה בהצלחה."
+            },
+            "info": {
+                "order_id": "מספר הזמנה",
+                "subtotal": "סכום חלקי",
+                "tax": "מס",
+                "discount": "הנחה",
+                "grand_total": "סכום כולל",
+                "cash": "מזומן",
+                "balance": "יתרה",
+                "no_order_selected": "לא נבחרה הזמנה לצפייה מקדימה או להדפסת החשבונית."
+            },
+            "print": {
+                "btn_title": "הדפס חשבונית",
+                "cashier": "קופאי",
+                "change": "עודף",
+                "contact_info": "פרטי קשר",
+                "customer": "לקוח",
+                "customer_care": "שירות לקוחות",
+                "date": "תאריך",
+                "discount": "הנחה",
+                "email": "דואר אלקטרוני",
+                "grand_total": "סכום כולל",
+                "item": "מוצר",
+                "name": "שם",
+                "order_id": "מספר הזמנה",
+                "phone": "טלפון",
+                "price": "מחיר",
+                "qty": "כמות",
+                "subtotal": "סיכום ביניים",
+                "tax": "מס",
+                "total": "סה\"כ",
+                "total_qty": "כמות כוללת",
+                "website": "אתר אינטרנט"
+            }              
+        },
+        "products": {
+            "title": "מוצרים",
+            "low_stock_products": {
+                "title": "מוצרים במלאי נמוך",
+                "qty": "{qty} כמות",
+                "purchase_request": "בקשת רכישה",
+                "send_request_btn": "שלח בקשה",
+                "no_purchase_request": "לא נמצאה בקשת רכישה.",
+                "no_products": "לא נמצאו מוצרים עם מלאי נמוך.",
+                "items_in_request": "{count} פריטים בבקשת הרכש.",
+                "view_btn_title": "צפה",
+                "request": {
+                    "title": "שלח בקשת כמות",
+                    "requested_quantity": "כמות המבוקשת",
+                    "comment": "הערה",
+                    "comment_placeholder": "הכנס הערה",
+                    "add_btn_title": "הוסף מוצר",
+                    "cancel_btn_title": "ביטול",
+                    "already_exist": "המוצר כבר קיים ברשימת הבקשות."
+                }
+            },
+            "requested_products": {
+                "title": "מוצרים בהמתנה",
+                "search_products": "חיפוש מוצרים...",
+                "qty": "כמות:- {qty}",
+                "pending": "בהמתנה",
+                "received": "התקבל",
+                "declined": "נדחה",
+                "no_products": "לא נמצאה בקשת מוצר."
+            },
+            "settings": {
+                "title": "הגדרות",
+                "minimum_qty": "כמות מינימלית",
+                "save_btn_title": "שמור",
+                "save_success": "הגדרות נשמרו בהצלחה."
+            }
+        },
+        "reports": {
+            "title": "דוחות",
+            "day": "יום",
+            "week": "שבוע",
+            "month": "חודש"
+        },
+        "settings": {
+            "title": "הגדרות",
+            "account": {
+                "title": "הגדרות חשבון",
+                "first_name": "שם פרטי",
+                "last_name": "שם משפחה",
+                "email": "אימייל",
+                "old_password": "סיסמה ישנה",
+                "new_password": "סיסמה חדשה",
+                "confirm_password": "אשר סיסמה",
+                "update_btn_title": "עדכן חשבון"
+            },
+            "other": {
+                "title": "אחר",
+                "locale": "שפה",
+                "select_locale": "בחר שפה",
+                "currency": "מטבע",
+                "select_currency": "בחר מטבע",
+                "save_btn_title": "שמור"
+            },
+            "save_success": "הגדרות נשמרו בהצלחה."
+        },
+        "payment": {
+            "title": "תשלום",
+            "back": "חזור",
+            "order_details": "פרטי הזמנה",
+            "subtotal": "סכום חלקי",
+            "tax": "מס",
+            "discount": "הנחה",
+            "grand_total": "סכום כולל",
+            "payable_amount": "סכום לתשלום",
+            "received": "התקבל",
+            "remaining": "יתרה",
+            "pos_cash": "מזומן",
+            "pos_card": "כרטיס",
+            "pos_split": "פיצול",
+            "cancel": "ביטול",
+            "card_details": "פרטי כרטיס",
+            "bank": "בנק",
+            "select_bank": "בחר בנק",
+            "other": "אחר",
+            "confirm_payment": "אשר תשלום",
+            "empty_cart": "עגלת הקניות ריקה!",
+            "amount_exceeded": "הסכום לתשלום חרג!",
+            "order_placed": "ההזמנה בוצעה בהצלחה."
+        }
+    }
+}

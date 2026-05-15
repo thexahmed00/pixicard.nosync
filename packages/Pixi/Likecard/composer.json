@@ -1,0 +1,17 @@
+{
+    "name": "pixi/likecard",
+    "description": "LikeCard Integration for Bagisto",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Pixi\\Likecard\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Pixi\\Likecard\\Providers\\LikeCardServiceProvider"
+            ]
+        }
+    }
+}

@@ -1,0 +1,26 @@
+#outlet\customers\create Related APIs
+extend type Mutation {
+    createPosCustomer(
+        input: createCustomerInput! @spread
+    ): CreateCustomerResult @guard(with: ["pos_user"]) @field(resolver: "Webkul\\Pos\\Mutations\\Outlet\\CustomerMutation@create")
+}
+
+input createCustomerInput {
+    customerId: Int @rename(attribute: "customer_id")
+    firstName: String! @rules(apply: ["required"]) @rename(attribute: "first_name")
+    lastName: String! @rules(apply: ["required"]) @rename(attribute: "last_name")
+    phone: String  
+    email: String!
+    address: [String]
+    city: String
+    country: String
+    state: String
+    postcode: String
+}
+
+type CreateCustomerResult {
+    success: Boolean
+    errors: String
+    message: String
+    customer: Customer
+}

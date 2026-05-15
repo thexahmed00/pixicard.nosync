@@ -1,0 +1,26 @@
+extend type Query {
+    fetchGlobalData: GlobalData @field(resolver: "Webkul\\Pos\\Queries\\Common\\GlobalDataQuery@index")
+}
+
+type GlobalData {
+    locales: [Locale]
+    currencies: [Currency]
+    configurations: [CoreConfig]
+    countries: [Country]
+    countryStates: [CountryStates] @rename(attribute: "country_states")
+    baseCurrency: String @rename(attribute: "base_currency")
+    defaultLocale: String @rename(attribute: "default_locale")
+}
+
+type CountryStates {
+    countryCode: String!
+    states: [CountryCode]
+}
+
+type CountryCode {
+    id: Int!
+    countryId: Int! @rename(attribute: "country_id")
+    countryCode: String! @rename(attribute: "country_code")
+    code: String!
+    defaultName: String! @rename(attribute: "default_name")
+}

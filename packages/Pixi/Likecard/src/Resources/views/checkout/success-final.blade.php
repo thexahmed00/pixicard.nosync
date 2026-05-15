@@ -1,0 +1,39 @@
+<x-shop::layouts
+    :has-header="true"
+    :has-feature="false"
+    :has-footer="true"
+>
+    <x-slot:title>
+        @lang('shop::app.checkout.success.thanks')
+    </x-slot>
+
+    <div class="container mt-8 px-[60px] max-lg:px-8">
+        <div class="grid place-items-center gap-y-5 max-md:gap-y-2.5">
+            <img 
+                class="max-md:h-[100px] max-md:w-[100px]"
+                src="{{ bagisto_asset('images/thank-you.png') }}" 
+                alt="@lang('shop::app.checkout.success.thanks')" 
+            >
+
+            <p class="text-xl max-md:text-sm">
+                @if (auth()->guard('customer')->user())
+                    @lang('shop::app.checkout.success.order-id-info', [
+                        'order_id' => '<a class="text-blue-700" href="'.route('shop.customers.account.orders.view', $order->id).'">#'.$order->increment_id.'</a>'
+                    ])
+                @else
+                    @lang('shop::app.checkout.success.order-id-info', ['order_id' => '#' . $order->increment_id]) 
+                @endif
+            </p>
+
+            <p class="font-medium md:text-2xl">
+                @lang('shop::app.checkout.success.thanks')
+            </p>
+            
+            <a href="{{ route('shop.home.index') }}">
+                <div class="w-max cursor-pointer rounded-2xl bg-navyBlue px-11 py-3 text-center text-base font-medium text-white">
+                    @lang('shop::app.checkout.cart.index.continue-shopping')
+                </div> 
+            </a>
+        </div>
+    </div>
+</x-shop::layouts>

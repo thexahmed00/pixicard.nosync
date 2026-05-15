@@ -1,0 +1,51 @@
+<x-marketplace::seller.layouts>
+    <x-slot:title>
+        @lang('marketplace::app.seller.pos-orders.title')
+        </x-slot>
+
+        <div class="flex-auto">
+            <div class="flex items-center justify-between mb-4">
+                <div>
+                    <h2 class="text-2xl font-medium">
+                        @lang('marketplace::app.seller.pos-orders.title')
+                    </h2>
+                </div>
+            </div>
+
+            <x-shop::datagrid :src="route('seller.pos_orders.index')">
+                {{-- Datagrid Body --}}
+                <template #body="{ columns, records }">
+                    <div v-for="record in records"
+                        class="row grid grid-cols-4 items-center border-b px-4 py-2.5 transition-all hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-950">
+                        <div class="flex flex-col gap-1.5">
+                            <p class="text-base font-semibold text-gray-800 dark:text-white">
+                                @lang('marketplace::app.seller.pos-orders.datagrid.order-id')
+                            </p>
+                            <p class="text-gray-600 dark:text-gray-300">#@{{ record.order_id }}</p>
+                        </div>
+
+                        <div class="flex flex-col gap-1.5">
+                            <p class="text-base font-semibold text-gray-800 dark:text-white">
+                                @lang('marketplace::app.seller.pos-orders.datagrid.total')
+                            </p>
+                            <p class="text-gray-600 dark:text-gray-300">@{{ record.grand_total }}</p>
+                        </div>
+
+                        <div class="flex flex-col gap-1.5">
+                            <p class="text-base font-semibold text-gray-800 dark:text-white">
+                                @lang('marketplace::app.seller.pos-orders.datagrid.currency')
+                            </p>
+                            <p class="text-gray-600 dark:text-gray-300">@{{ record.order_currency }}</p>
+                        </div>
+
+                        <div class="flex flex-col gap-1.5">
+                            <p class="text-base font-semibold text-gray-800 dark:text-white">
+                                @lang('marketplace::app.seller.pos-orders.datagrid.created-at')
+                            </p>
+                            <p class="text-gray-600 dark:text-gray-300">@{{ record.created_at }}</p>
+                        </div>
+                    </div>
+                </template>
+            </x-shop::datagrid>
+        </div>
+</x-marketplace::seller.layouts>

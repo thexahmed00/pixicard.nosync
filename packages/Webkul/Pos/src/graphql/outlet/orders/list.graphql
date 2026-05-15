@@ -1,0 +1,23 @@
+#outlet\home\orders list related APIs
+extend type Query {
+    getOrders (
+        first: Int,
+        page: Int
+    ): [OutletOrder!] @guard(with: ["pos_user"]) @paginate(
+        type: "PAGINATOR",
+        builder: "Webkul\\Pos\\Queries\\Order\\OrderQuery@getOrders",
+        defaultCount: 10
+    )
+}
+
+type OutletOrder {
+    barcodeUrl: String @rename(attribute: "barcode_url")
+    outlet: Outlet @belongsTo(relation: "outlet")
+    customerCredit: CustomerCredit @belongsTo(relation: "customerCredit")
+    order: Order
+}
+
+type CustomerCredit {
+    changeAmount: String @rename(attribute: "change_amount")
+    tenderedAmount: String @rename(attribute: "tendered_amount")
+}

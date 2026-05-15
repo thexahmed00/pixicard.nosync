@@ -1,0 +1,420 @@
+{
+    "pos": {
+        "title": "Bagisto POS",
+        "page_not_found": {
+            "title": "Coś brakuje.",
+            "message": "Przepraszamy, nie możemy znaleźć tej strony. Na stronie głównej znajdziesz wiele do odkrycia.",
+            "back_btn_title": "Powrót do strony głównej"
+        },
+        "login_form": {
+            "title": "Logowanie",
+            "user_name": "Nazwa użytkownika",
+            "user_name_placeholder": "Wprowadź nazwę użytkownika",
+            "password": "Hasło",
+            "password_placeholder": "Wprowadź hasło",
+            "remember_password": "Zapamiętaj hasło",
+            "login_btn_title": "Zaloguj się"
+        },
+        "footer": {
+            "warning": "Webkul nie autoryzuje żadnych sprzedawców zewnętrznych do odsprzedaży modułów Webkul.",
+            "copyright": "© Prawa autorskie 2010-2023, Webkul Software (Zarejestrowane w Indiach/USA). Wszelkie prawa zastrzeżone."
+        },
+        "layout": {
+            "header": {
+                "title": "Bagisto POS",
+                "search_products": "Szukaj produktów...",
+                "hold_orders": "Zawieś zamówienia",
+                "barcode_form": {
+                    "title": "Wprowadź kod kreskowy",
+                    "barcode_placeholder": "Wprowadź kod kreskowy produktu",
+                    "cancel_btn_title": "Anuluj",
+                    "proceed_btn_title": "Kontynuuj"
+                },
+                "product_create_form": {
+                    "title": "Dodaj nowy produkt",
+                    "name": "Nazwa",
+                    "sku": "SKU",
+                    "price": "Cena",
+                    "weight": "Waga",
+                    "quantity": "Ilość",
+                    "cancel_btn_title": "Anuluj",
+                    "proceed_btn_title": "Kontynuuj"
+                }
+            },
+            "sidebar": {
+                "home": "Strona główna",
+                "customers": "Klienci",
+                "cashier": "Kasjer",
+                "orders": "Zamówienia",
+                "products": "Produkty",
+                "reports": "Raporty",
+                "settings": "Ustawienia",
+                "logout": "Wyloguj się"
+            },
+            "main": {
+                "progress_modal": {
+                    "title": "Synchronizacja Danych",
+                    "description": "Proszę czekać, podczas gdy synchronizujemy dane. Może to potrwać chwilę.",
+                    "products": "Produkty",
+                    "categories": "Kategorie",
+                    "customers": "Klienci",
+                    "orders": "Zamówienia"
+                },
+                "cash_drawer": {
+                    "title": "Szuflada Kasowa",
+                    "opening_drawer_amount": "Kwota Otwarcia Szuflady",
+                    "remarks": "Uwagi",
+                    "remarks_placeholder": "Wprowadź uwagi dotyczące zamknięcia kasy.",
+                    "open_drawer": "Otwórz Szufladę"
+                }
+            }
+        },
+        "common": {
+            "cart": {
+                "add_customer": "Dodaj klienta",
+                "add": "Dodaj",
+                "quantity": "Ilość",
+                "discount": "Rabat",
+                "coupon_code": "Kod kuponu",
+                "note": "Uwaga",
+                "subtotal": "Suma częściowa",
+                "tax": "Podatek",
+                "payable_amount": "Kwota do zapłaty",
+                "hold_order": "Zawieś zamówienie",
+                "hold_order_success": "Zamówienie zostało pomyślnie wstrzymane.",
+                "create_success": "Koszyk utworzony pomyślnie.",
+                "update_success": "Koszyk został pomyślnie zaktualizowany.",
+                "remove_success": "Koszyk został pomyślnie usunięty.",
+                "product_add_success": "Produkt został pomyślnie dodany do koszyka!",
+                "product_remove_success": "Produkt został pomyślnie usunięty z koszyka!",
+                "no_cart_selected": "Nie wybrano koszyka.",
+                "no_customer_selected": "Nie wybrano klienta.",
+                "customer_exists": "Koszyk już istnieje dla wybranego klienta.",
+                "proceed": "Kontynuuj",
+                "coupon_form": {
+                    "title": "Kod kuponu",
+                    "cancel_btn_title": "Anuluj",
+                    "proceed_btn_title": "Kontynuuj"
+                },
+                "order_note_form": {
+                    "title": "Uwaga do zamówienia",
+                    "note_placeholder": "Wprowadź uwagę do zamówienia",
+                    "cancel_btn_title": "Anuluj",
+                    "proceed_btn_title": "Kontynuuj",
+                    "create_success": "Notatka zamówienia została pomyślnie dodana.",
+                    "remove_success": "Notatka zamówienia została pomyślnie usunięta."
+                }
+            },
+            "flash_messages": {
+                "close": "Zamknij",
+                "error_message": "Coś poszło nie tak! Spróbuj ponownie.",
+                "offline_error": "Ostrzeżenie, jesteś w trybie offline"
+            },
+            "confirm_modal": {
+                "title": "Czy jesteś pewny?",
+                "description": "Czy na pewno chcesz wykonać tę akcję?",
+                "disagree_btn_title": "Nie zgadzam się",
+                "agree_btn_title": "Zgadzam się"
+            }
+        },
+        "home": {
+            "title": "Strona główna",
+            "print_confirmation_title": "Potwierdzenie druku?",
+            "print_confirm_message": "Czy chcesz wydrukować paragon z ostatniego zamówienia?",
+            "items_in_cart": "{count} przedmioty w koszyku.",  
+            "view_cart_btn": "Zobacz koszyk",
+            "categories": {
+                "all": "Wszystko"
+            },
+            "product": {
+                "view": {
+                    "qty": "{qty} Ilość",
+                    "add_to_cart": "Dodaj do koszyka",
+                    "type": {
+                        "bundle": {
+                            "total_amount": "Łączna Kwota",
+                            "none": "Brak Opisów Pakietów"
+                        },
+                        "configurable": {
+                            "select_option": "Wybierz Opcje",
+                            "select_above_option": "Proszę najpierw wybrać powyższe opcje.",
+                            "price": "Cena Wybranej Wariantu"
+                        },
+                        "downloadable": {
+                            "samples": "Próbki",
+                            "links": "Linki"
+                        },
+                        "grouped": {
+                            "name": "Nazwa"
+                        }
+                    }
+                }
+            }
+        },
+        "customers": {
+            "title": "Klienci",
+            "add_btn_title": "Dodaj Nowego Klienta",
+            "edit_btn_title": "Edytuj",
+            "delete_btn_title": "Usuń",
+            "remove_btn_title": "Usuń",
+            "search_customers": "Szukaj Klientów...",
+            "no_customers_found": "Nie znaleziono klientów.",
+            "no_current_customer": "Nie wybrano żadnego obecnego klienta.",
+            "current_customer_removed": "Klient został pomyślnie usunięty.",
+            "current_customer_updated": "Obecny klient został pomyślnie zaktualizowany.",
+            "customers": "Klienci",
+            "offline_customers": "Klienci Offline",
+            "create": {
+                "title": "Dodaj Nowego Klienta",
+                "back_btn_title": "Powrót",
+                "first_name": "Imię",
+                "last_name": "Nazwisko",
+                "email": "Email",
+                "phone_number": "Numer Telefonu",
+                "address": "Adres",
+                "city": "Miasto",
+                "state": "Stan",
+                "select_state": "Wybierz Stan",
+                "country": "Kraj",
+                "select_country": "Wybierz Kraj",
+                "pin_code": "Kod Pocztowy",
+                "save_btn_title": "Dodaj Klienta",
+                "phone_already_exist": "Numer telefonu jest już zajęty.",
+                "email_already_exist": "Email jest już zajęty.",
+                "create_success": "Klient został pomyślnie utworzony."
+            },
+            "edit": {
+                "title": "Edytuj Klienta",
+                "back_btn_title": "Powrót",
+                "first_name": "Imię",
+                "last_name": "Nazwisko",
+                "email": "Email",
+                "phone_number": "Numer Telefonu",
+                "address": "Adres",
+                "city": "Miasto",
+                "state": "Stan",
+                "select_state": "Wybierz Stan",
+                "country": "Kraj",
+                "select_country": "Wybierz Kraj",
+                "pin_code": "Kod Pocztowy",
+                "save_btn_title": "Zaktualizuj Klienta",
+                "phone_already_exist": "Numer telefonu jest już zajęty.",
+                "email_already_exist": "Email jest już zajęty.",
+                "update_success": "Klient został pomyślnie zaktualizowany."
+            }
+        },
+        "cashier": {
+            "title": "Kasjer",
+            "cash_drawer": {
+                "title": "Szuflada kasowa",
+                "drawer_amount_summary": "Podsumowanie kwoty w szufladzie",
+                "opening_drawer_amount": "Kwota otwarcia szuflady",
+                "cash_payment_sale": "Sprzedaż za gotówkę",
+                "other_payment_sale": "Sprzedaż za inne formy płatności",
+                "expected_drawer_amount": "Oczekiwana kwota w szufladzie",
+                "difference": "Różnica",
+                "remarks": "Uwagi",
+                "remarks_placeholder": "Wprowadź uwagi dotyczące zamknięcia kasy.",
+                "close_drawer": "Zamknij szufladę"
+            },
+            "today_sale": {
+                "title": "Dzisiejsza sprzedaż",
+                "opening_drawer_amount": "Kwota otwarcia szuflady",
+                "cash_payment_sale": "Sprzedaż za gotówkę",
+                "other_payment_sale": "Sprzedaż za inne formy płatności",
+                "sale_history": "Historia sprzedaży",
+                "filters": "Filtry",
+                "order_id": "ID zamówienia",
+                "time": "Czas",
+                "order_total": "Suma zamówienia",
+                "payment_mode": "Forma płatności",
+                "no_records": "Nie znaleziono żadnych rekordów.",
+                "drawer": {
+                    "title": "Filtr",
+                    "order_id": "ID Zamówienia",
+                    "time": "Czas",
+                    "order_total": "Suma Zamówienia",
+                    "payment_mode": "Metoda Płatności",
+                    "select_payment_mode": "Wybierz Metodę Płatności",
+                    "pos_cash": "Płatność Gotówkowa",
+                    "pos_card": "Płatność Kartą",
+                    "pos_split": "Płatność Podzielona",
+                    "filter_btn_title": "Zastosuj Filtr"
+                }
+            },
+            "sale_history": {
+                "title": "Historia sprzedaży",
+                "filters": "Filtry",
+                "date": "Data",
+                "cash_payments": "Płatności gotówkowe",
+                "other_payments": "Inne formy płatności",
+                "total_sale": "Całkowita sprzedaż",
+                "drawer_note": "Uwagi do szuflady",
+                "no_records": "Nie znaleziono żadnych rekordów.",
+                "drawer": {
+                    "title": "Filtr",
+                    "date": "Data",
+                    "cash_payment": "Płatność gotówką",
+                    "other_payment": "Inna płatność",
+                    "total_sale": "Łączna sprzedaż",
+                    "filter_btn_title": "Zastosuj filtr"
+                }
+            }
+        },
+        "orders": {
+            "title": "Zamówienia",
+            "history": {
+                "title": "Historia",
+                "search_orders": "Wyszukaj ID zamówienia lub nazwę klienta...",
+                "filters": "Filtry",
+                "order_id": "ID zamówienia",
+                "date": "Data",
+                "total_sales": "Całkowita sprzedaż",
+                "subtotal": "Suma częściowa",
+                "tax": "Podatek",
+                "no_records": "Nie znaleziono żadnych rekordów."
+            },
+            "hold": {
+                "title": "Zamówienia Wstrzymane",
+                "note": "Uwagi",
+                "resume": "Wznów",
+                "remove": "Usuń",
+                "remove_success": "Zamówienie zostało pomyślnie usunięte.",
+                "resume_success": "Zamówienie zostało pomyślnie wznowione.",
+                "no_orders": "Brak zamówień."
+            },
+            "offline": {
+                "title": "Zamówienia offline",
+                "sync_order": "Synchronizuj zamówienie",
+                "sync_all_orders": "Synchronizuj wszystkie zamówienia",
+                "search_order_id": "Wyszukaj ID zamówienia...",
+                "order_id": "ID zamówienia",
+                "date": "Data",
+                "no_orders": "Nie znaleziono zamówień offline.",
+                "sync_success": "Zamówienie zostało pomyślnie zsynchronizowane."
+            },
+            "info": {
+                "order_id": "ID zamówienia",
+                "subtotal": "Suma częściowa",
+                "tax": "Podatek",
+                "discount": "Rabat",
+                "grand_total": "Suma ogólna",
+                "cash": "Gotówka",
+                "balance": "Saldo",
+                "no_order_selected": "Nie wybrano żadnego zamówienia do podglądu lub wydruku faktury."
+            },
+            "print": {
+                "btn_title": "Drukuj Fakturę",
+                "cashier": "Kasjer",
+                "change": "Reszta",
+                "contact_info": "Dane Kontaktowe",
+                "customer": "Klient",
+                "customer_care": "Obsługa Klienta",
+                "date": "Data",
+                "discount": "Rabat",
+                "email": "E-mail",
+                "grand_total": "Suma Całkowita",
+                "item": "Produkt",
+                "name": "Nazwa",
+                "order_id": "Numer Zamówienia",
+                "phone": "Telefon",
+                "price": "Cena",
+                "qty": "Ilość",
+                "subtotal": "Suma Częściowa",
+                "tax": "Podatek",
+                "total": "Suma",
+                "total_qty": "Całkowita Ilość",
+                "website": "Strona Internetowa"
+            }              
+        },
+        "products": {
+            "title": "Produkty",
+            "low_stock_products": {
+                "title": "Produkty z Niskim Stanem Magazynowym",
+                "qty": "{qty} Ilość",
+                "purchase_request": "Wniosek o Zakup",
+                "send_request_btn": "Wyślij Wniosek",
+                "no_purchase_request": "Nie znaleziono wniosku o zakup.",
+                "no_products": "Nie znaleziono produktów z niskim stanem magazynowym.",
+                "items_in_request": "{count} elementów w żądaniu zakupu.",
+                "view_btn_title": "Zobacz",
+                "request": {
+                    "title": "Wyślij Wniosek o Ilość",
+                    "requested_quantity": "Żądana Ilość",
+                    "comment": "Komentarz",
+                    "comment_placeholder": "Wprowadź komentarz",
+                    "add_btn_title": "Dodaj Produkt",
+                    "cancel_btn_title": "Anuluj",
+                    "already_exist": "Produkt już istnieje na liście wniosków."
+                }
+            },
+            "requested_products": {
+                "title": "Żądane produkty",
+                "search_products": "Szukaj produktów...",
+                "qty": "Ilość:- {qty}",
+                "pending": "Oczekujące",
+                "received": "Otrzymane",
+                "declined": "Odrzucone",
+                "no_products": "Nie znaleziono żadnych próśb o produkt."
+            },
+            "settings": {
+                "title": "Ustawienia",
+                "minimum_qty": "Minimalna ilość",
+                "save_btn_title": "Zapisz",
+                "save_success": "Ustawienia zapisano pomyślnie."
+            }
+        },
+        "reports": {
+            "title": "Raporty",
+            "day": "Dzień",
+            "week": "Tydzień",
+            "month": "Miesiąc"
+        },
+        "settings": {
+            "title": "Ustawienia",
+            "account": {
+                "title": "Ustawienia konta",
+                "first_name": "Imię",
+                "last_name": "Nazwisko",
+                "email": "Email",
+                "old_password": "Stare hasło",
+                "new_password": "Nowe hasło",
+                "confirm_password": "Potwierdź hasło",
+                "update_btn_title": "Aktualizuj konto"
+            },
+            "other": {
+                "title": "Inne",
+                "locale": "Lokalizacja",
+                "select_locale": "Wybierz lokalizację",
+                "currency": "Waluta",
+                "select_currency": "Wybierz walutę",
+                "save_btn_title": "Zapisz"
+            },
+            "save_success": "Ustawienia zapisano pomyślnie."
+        },
+        "payment": {
+            "title": "Płatność",
+            "back": "Powrót",
+            "order_details": "Szczegóły zamówienia",
+            "subtotal": "Suma częściowa",
+            "tax": "Podatek",
+            "discount": "Rabat",
+            "grand_total": "Suma ogólna",
+            "payable_amount": "Kwota do zapłaty",
+            "received": "Otrzymane",
+            "remaining": "Pozostało",
+            "pos_cash": "Gotówka",
+            "pos_card": "Karta",
+            "pos_split": "Podzielone",
+            "cancel": "Anuluj",
+            "card_details": "Szczegóły karty",
+            "bank": "Bank",
+            "select_bank": "Wybierz bank",
+            "other": "Inne",
+            "confirm_payment": "Potwierdź płatność",
+            "empty_cart": "Koszyk jest pusty!",
+            "amount_exceeded": "Przekroczona kwota do zapłaty!",
+            "order_placed": "Zamówienie zostało złożone pomyślnie."
+        }
+    }
+}

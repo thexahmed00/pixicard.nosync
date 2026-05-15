@@ -1,0 +1,22 @@
+#outlet\payment\process-payment.graphql
+extend type Mutation {
+    confirmPayment(
+        input: confirmPaymentInput! @spread
+    ): ConfirmPaymentResult @guard(with: ["pos_user"]) @field(resolver: "Webkul\\Pos\\Mutations\\Outlet\\PaymentMutation@confirmPayment")
+}
+
+input confirmPaymentInput {
+    cartId: Int @rename(attribute: "cart_id")
+    paymentMode: String @rename(attribute: "payment_mode")
+    cashTotal: Float @rename(attribute: "cash_total")
+    cardTotal: Float @rename(attribute: "card_total")
+    bankName: String @rename(attribute: "bank_name")
+    cardDetails: String @rename(attribute: "card_details")
+    orderNote: String @rename(attribute: "order_note")
+}
+
+type ConfirmPaymentResult {
+    success: Boolean
+    message: String
+    outletOrder: OutletOrder @rename(attribute: "outlet_order")
+}

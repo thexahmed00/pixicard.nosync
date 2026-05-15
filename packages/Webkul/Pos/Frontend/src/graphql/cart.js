@@ -1,0 +1,690 @@
+import { gql } from '@apollo/client/core';
+
+export const CREATE_CART = gql`
+    mutation createCart($customerId: ID!) {
+        createCart(customerId: $customerId) {
+            success
+            message
+            cart {
+                id
+                customerEmail
+                customerFirstName
+                customerLastName
+                shippingMethod
+                couponCode
+                itemsCount
+                itemsQty
+                exchangeRate
+                globalCurrencyCode
+                baseCurrencyCode
+                channelCurrencyCode
+                cartCurrencyCode
+                grandTotal
+                baseGrandTotal
+                subTotal
+                baseSubTotal
+                taxTotal
+                baseTaxTotal
+                discountAmount
+                baseDiscountAmount
+                checkoutMethod
+                isGuest
+                isActive
+                appliedCartRuleIds
+                customerId
+                channelId
+                createdAt
+                updatedAt
+                formattedPrice {
+                    grandTotal
+                    baseGrandTotal
+                    subTotal
+                    baseSubTotal
+                    taxTotal
+                    baseTaxTotal
+                    discountAmount
+                    baseDiscountAmount
+                    discountedSubTotal
+                    baseDiscountedSubTotal
+                }
+                items {
+                    id
+                    quantity
+                    sku
+                    type
+                    name
+                    couponCode
+                    weight
+                    totalWeight
+                    baseTotalWeight
+                    price
+                    basePrice
+                    customPrice
+                    total
+                    baseTotal
+                    taxPercent
+                    taxAmount
+                    baseTaxAmount
+                    discountPercent
+                    discountAmount
+                    baseDiscountAmount
+                    parentId
+                    productId
+                    cartId
+                    taxCategoryId
+                    appliedCartRuleIds
+                    additional 
+                    createdAt
+                    updatedAt
+                    product {
+                        priceHtml {
+                            minPrice
+                            finalPrice
+                        }
+                    }
+                    formattedPrice {
+                        price
+                        basePrice
+                        customPrice
+                        total
+                        baseTotal
+                        taxAmount
+                        baseTaxAmount
+                        discountAmount
+                        baseDiscountAmount
+                    }
+                }
+            }
+        }
+    }
+`;
+
+export const GET_CART = gql`
+    query getCart($id: ID!) {
+        getCart(id: $id) {
+            id
+            customerEmail
+            customerFirstName
+            customerLastName
+            shippingMethod
+            couponCode
+            itemsCount
+            itemsQty
+            exchangeRate
+            globalCurrencyCode
+            baseCurrencyCode
+            channelCurrencyCode
+            cartCurrencyCode
+            grandTotal
+            baseGrandTotal
+            subTotal
+            baseSubTotal
+            taxTotal
+            baseTaxTotal
+            discountAmount
+            baseDiscountAmount
+            checkoutMethod
+            isGuest
+            isActive
+            appliedCartRuleIds
+            customerId
+            channelId
+            createdAt
+            updatedAt
+            formattedPrice {
+                grandTotal
+                baseGrandTotal
+                subTotal
+                baseSubTotal
+                taxTotal
+                baseTaxTotal
+                discountAmount
+                baseDiscountAmount
+                discountedSubTotal
+                baseDiscountedSubTotal
+            }
+            items {
+                id
+                quantity
+                sku
+                type
+                name
+                couponCode
+                weight
+                totalWeight
+                baseTotalWeight
+                price
+                basePrice
+                customPrice
+                total
+                baseTotal
+                taxPercent
+                taxAmount
+                baseTaxAmount
+                discountPercent
+                discountAmount
+                baseDiscountAmount
+                parentId
+                productId
+                cartId
+                taxCategoryId
+                appliedCartRuleIds
+                additional 
+                createdAt
+                updatedAt
+                product {
+                    priceHtml {
+                        minPrice
+                        finalPrice
+                    }
+                }
+                formattedPrice {
+                    price
+                    basePrice
+                    customPrice
+                    total
+                    baseTotal
+                    taxAmount
+                    baseTaxAmount
+                    discountAmount
+                    baseDiscountAmount
+                }
+            }
+        }
+    }
+`;
+
+export const ADD_TO_CART = gql`
+    mutation storeCartItem ($input: createCartInput!) {
+        storeCartItem (input: $input) {
+            success
+            message
+            cart {
+                id
+                customerEmail
+                customerFirstName
+                customerLastName
+                shippingMethod
+                couponCode
+                itemsCount
+                itemsQty
+                exchangeRate
+                globalCurrencyCode
+                baseCurrencyCode
+                channelCurrencyCode
+                cartCurrencyCode
+                grandTotal
+                baseGrandTotal
+                subTotal
+                baseSubTotal
+                taxTotal
+                baseTaxTotal
+                discountAmount
+                baseDiscountAmount
+                checkoutMethod
+                isGuest
+                isActive
+                appliedCartRuleIds
+                customerId
+                channelId
+                createdAt
+                updatedAt
+                formattedPrice {
+                    grandTotal
+                    baseGrandTotal
+                    subTotal
+                    baseSubTotal
+                    taxTotal
+                    baseTaxTotal
+                    discountAmount
+                    baseDiscountAmount
+                    discountedSubTotal
+                    baseDiscountedSubTotal
+                }
+                items {
+                    id
+                    quantity
+                    sku
+                    type
+                    name
+                    couponCode
+                    weight
+                    totalWeight
+                    baseTotalWeight
+                    price
+                    basePrice
+                    customPrice
+                    total
+                    baseTotal
+                    taxPercent
+                    taxAmount
+                    baseTaxAmount
+                    discountPercent
+                    discountAmount
+                    baseDiscountAmount
+                    parentId
+                    productId
+                    cartId
+                    taxCategoryId
+                    appliedCartRuleIds
+                    additional 
+                    createdAt
+                    updatedAt
+                    product {
+                        priceHtml {
+                            minPrice
+                            finalPrice
+                        }
+                    }
+                    formattedPrice {
+                        price
+                        basePrice
+                        customPrice
+                        total
+                        baseTotal
+                        taxAmount
+                        baseTaxAmount
+                        discountAmount
+                        baseDiscountAmount
+                    }
+                }
+            }
+        }
+    }
+`;
+
+export const UPDATE_ITEM = gql`
+    mutation updateCartItem ($input: updateCartItemInput!) {
+        updateCartItem (input: $input) {
+            success
+            message
+            cart {
+                id
+                customerEmail
+                customerFirstName
+                customerLastName
+                shippingMethod
+                couponCode
+                itemsCount
+                itemsQty
+                exchangeRate
+                globalCurrencyCode
+                baseCurrencyCode
+                channelCurrencyCode
+                cartCurrencyCode
+                grandTotal
+                baseGrandTotal
+                subTotal
+                baseSubTotal
+                taxTotal
+                baseTaxTotal
+                discountAmount
+                baseDiscountAmount
+                checkoutMethod
+                isGuest
+                isActive
+                appliedCartRuleIds
+                customerId
+                channelId
+                createdAt
+                updatedAt
+                formattedPrice {
+                    grandTotal
+                    baseGrandTotal
+                    subTotal
+                    baseSubTotal
+                    taxTotal
+                    baseTaxTotal
+                    discountAmount
+                    baseDiscountAmount
+                    discountedSubTotal
+                    baseDiscountedSubTotal
+                }
+                items {
+                    id
+                    quantity
+                    sku
+                    type
+                    name
+                    couponCode
+                    weight
+                    totalWeight
+                    baseTotalWeight
+                    price
+                    basePrice
+                    customPrice
+                    total
+                    baseTotal
+                    taxPercent
+                    taxAmount
+                    baseTaxAmount
+                    discountPercent
+                    discountAmount
+                    baseDiscountAmount
+                    parentId
+                    productId
+                    cartId
+                    taxCategoryId
+                    appliedCartRuleIds
+                    additional 
+                    createdAt
+                    updatedAt
+                    product {
+                        priceHtml {
+                            minPrice
+                            finalPrice
+                        }
+                    }
+                    formattedPrice {
+                        price
+                        basePrice
+                        customPrice
+                        total
+                        baseTotal
+                        taxAmount
+                        baseTaxAmount
+                        discountAmount
+                        baseDiscountAmount
+                    }
+                }
+            }
+        }
+    }
+`;
+
+export const DELETE_ITEM = gql`
+    mutation deleteCartItem ($input: deleteCartItemInput!) {
+        deleteCartItem (input: $input) {
+            success
+            message
+            cart {
+                id
+                customerEmail
+                customerFirstName
+                customerLastName
+                shippingMethod
+                couponCode
+                itemsCount
+                itemsQty
+                exchangeRate
+                globalCurrencyCode
+                baseCurrencyCode
+                channelCurrencyCode
+                cartCurrencyCode
+                grandTotal
+                baseGrandTotal
+                subTotal
+                baseSubTotal
+                taxTotal
+                baseTaxTotal
+                discountAmount
+                baseDiscountAmount
+                checkoutMethod
+                isGuest
+                isActive
+                appliedCartRuleIds
+                customerId
+                channelId
+                createdAt
+                updatedAt
+                formattedPrice {
+                    grandTotal
+                    baseGrandTotal
+                    subTotal
+                    baseSubTotal
+                    taxTotal
+                    baseTaxTotal
+                    discountAmount
+                    baseDiscountAmount
+                    discountedSubTotal
+                    baseDiscountedSubTotal
+                }
+                items {
+                    id
+                    quantity
+                    sku
+                    type
+                    name
+                    couponCode
+                    weight
+                    totalWeight
+                    baseTotalWeight
+                    price
+                    basePrice
+                    customPrice
+                    total
+                    baseTotal
+                    taxPercent
+                    taxAmount
+                    baseTaxAmount
+                    discountPercent
+                    discountAmount
+                    baseDiscountAmount
+                    parentId
+                    productId
+                    cartId
+                    taxCategoryId
+                    appliedCartRuleIds
+                    additional 
+                    createdAt
+                    updatedAt
+                    product {
+                        priceHtml {
+                            minPrice
+                            finalPrice
+                        }
+                    }
+                    formattedPrice {
+                        price
+                        basePrice
+                        customPrice
+                        total
+                        baseTotal
+                        taxAmount
+                        baseTaxAmount
+                        discountAmount
+                        baseDiscountAmount
+                    }
+                }
+            }
+        }
+    }
+`;
+
+export const APPLY_COUPON = gql`
+    mutation applyCartCoupon ($input: applyCouponInput!) {
+        applyCartCoupon (input: $input) {
+            success
+            message
+            cart {
+                id
+                customerEmail
+                customerFirstName
+                customerLastName
+                shippingMethod
+                couponCode
+                itemsCount
+                itemsQty
+                exchangeRate
+                globalCurrencyCode
+                baseCurrencyCode
+                channelCurrencyCode
+                cartCurrencyCode
+                grandTotal
+                baseGrandTotal
+                subTotal
+                baseSubTotal
+                taxTotal
+                baseTaxTotal
+                discountAmount
+                baseDiscountAmount
+                checkoutMethod
+                isGuest
+                isActive
+                appliedCartRuleIds
+                customerId
+                channelId
+                createdAt
+                updatedAt
+                formattedPrice {
+                    grandTotal
+                    baseGrandTotal
+                    subTotal
+                    baseSubTotal
+                    taxTotal
+                    baseTaxTotal
+                    discountAmount
+                    baseDiscountAmount
+                    discountedSubTotal
+                    baseDiscountedSubTotal
+                }
+                items {
+                    id
+                    quantity
+                    sku
+                    type
+                    name
+                    couponCode
+                    weight
+                    totalWeight
+                    baseTotalWeight
+                    price
+                    basePrice
+                    customPrice
+                    total
+                    baseTotal
+                    taxPercent
+                    taxAmount
+                    baseTaxAmount
+                    discountPercent
+                    discountAmount
+                    baseDiscountAmount
+                    parentId
+                    productId
+                    cartId
+                    taxCategoryId
+                    appliedCartRuleIds
+                    additional 
+                    createdAt
+                    updatedAt
+                    product {
+                        priceHtml {
+                            minPrice
+                            finalPrice
+                        }
+                    }
+                    formattedPrice {
+                        price
+                        basePrice
+                        customPrice
+                        total
+                        baseTotal
+                        taxAmount
+                        baseTaxAmount
+                        discountAmount
+                        baseDiscountAmount
+                    }
+                }
+            }
+        }
+    }
+`;
+
+export const REMOVE_COUPON = gql`
+    mutation removeCartCoupon($cartId: ID!) {
+        removeCartCoupon(cartId: $cartId) {
+            success
+            message
+            cart {
+                id
+                customerEmail
+                customerFirstName
+                customerLastName
+                shippingMethod
+                couponCode
+                itemsCount
+                itemsQty
+                exchangeRate
+                globalCurrencyCode
+                baseCurrencyCode
+                channelCurrencyCode
+                cartCurrencyCode
+                grandTotal
+                baseGrandTotal
+                subTotal
+                baseSubTotal
+                taxTotal
+                baseTaxTotal
+                discountAmount
+                baseDiscountAmount
+                checkoutMethod
+                isGuest
+                isActive
+                appliedCartRuleIds
+                customerId
+                channelId
+                createdAt
+                updatedAt
+                formattedPrice {
+                    grandTotal
+                    baseGrandTotal
+                    subTotal
+                    baseSubTotal
+                    taxTotal
+                    baseTaxTotal
+                    discountAmount
+                    baseDiscountAmount
+                    discountedSubTotal
+                    baseDiscountedSubTotal
+                }
+                items {
+                    id
+                    quantity
+                    sku
+                    type
+                    name
+                    couponCode
+                    weight
+                    totalWeight
+                    baseTotalWeight
+                    price
+                    basePrice
+                    customPrice
+                    total
+                    baseTotal
+                    taxPercent
+                    taxAmount
+                    baseTaxAmount
+                    discountPercent
+                    discountAmount
+                    baseDiscountAmount
+                    parentId
+                    productId
+                    cartId
+                    taxCategoryId
+                    appliedCartRuleIds
+                    additional 
+                    createdAt
+                    updatedAt
+                    product {
+                        priceHtml {
+                            minPrice
+                            finalPrice
+                        }
+                    }
+                    formattedPrice {
+                        price
+                        basePrice
+                        customPrice
+                        total
+                        baseTotal
+                        taxAmount
+                        baseTaxAmount
+                        discountAmount
+                        baseDiscountAmount
+                    }
+                }
+            }
+        }
+    }
+`;
