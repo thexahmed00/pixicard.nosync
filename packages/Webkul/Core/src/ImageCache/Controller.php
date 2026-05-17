@@ -127,8 +127,6 @@ class Controller extends ImageCacheController
         /**
          * Return http response
          */
-        ob_clean();
-
         return new IlluminateResponse($content, $statusCode, [
             'Content-Type'   => $mime,
             'Cache-Control'  => 'max-age='.$maxAge.', public',
